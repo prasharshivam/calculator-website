@@ -5,4 +5,5 @@ Disallow: /css/
 Disallow: /js/
 Disallow: /assets/
 
-Sitemap: https://www.yoursite.com/sitemap.xml
+Sitemap: https://www.yoursimplecalculator.com/sitemap.xml
+
