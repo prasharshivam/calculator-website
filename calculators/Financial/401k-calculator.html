@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>401(k) Calculator – Contributions, Growth & Early Withdrawal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Estimate your 401(k) retirement savings, see the impact of employer match, and explore early withdrawal taxes and penalties with this free 401(k) calculator.">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="../../index.html">
+        <img src="../../images/logo.png" alt="Your Simple Calculator">
+      </a>
+    </div>
+    <nav class="main-nav">
+      <a href="../../financial.html">Financial</a>
+      <a href="../../health.html">Fitness &amp; Health</a>
+      <a href="../../math.html">Math</a>
+      <a href="../../other.html">Other</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <nav class="breadcrumb">
+    <a href="../../index.html">Home</a>
+    <span>›</span>
+    <a href="../../financial.html">Financial</a>
+    <span>›</span>
+    <span>401(k) Calculator</span>
+  </nav>
+
+  <h1>401(k) Calculator</h1>
+  <!-- AdSense: in-article / below title -->
+<ins class="adsbygoogle"
+     style="display:block; text-align:center; margin:16px 0;"
+     data-ad-client="ca-pub-XXXXXXXXXXXX"
+     data-ad-slot="1111111111"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+
+  <section class="seo-intro">
+    <p>
+      This <strong>401(k) Calculator</strong> helps you estimate how your retirement savings might grow over time, how much an employer match could add, and what happens if you take money out of a 401(k) before retirement.
+    </p>
+    <p>
+      The numbers are simplified projections and are not tax, investment, or financial advice. Actual outcomes depend on market performance, plan rules, fees, and your personal tax situation.
+    </p>
+  </section>
+
+  <div class="calculator-box">
+
+    <!-- Tabs -->
+    <div class="age-tabs" style="margin-bottom:15px;">
+      <button type="button" class="age-tab active" data-mode="growth">
+        401(k) contributions &amp; growth
+      </button>
+      <button type="button" class="age-tab" data-mode="retirement">
+        Balance at retirement age
+      </button>
+      <button type="button" class="age-tab" data-mode="withdrawal">
+        Early withdrawal impact &amp; IRS exceptions
+      </button>
+    </div>
+
+    <!-- Tool 1: Contributions & growth -->
+    <section id="growth" class="age-tool">
+      <h2 class="tool-heading">401(k) contributions and projected growth</h2>
+
+      <label for="currentBalance">Current 401(k) balance ($)</label>
+      <input type="number" id="currentBalance" placeholder="e.g. 15000">
+
+      <label for="annualSalary">Annual salary ($)</label>
+      <input type="number" id="annualSalary" placeholder="e.g. 60000">
+
+      <label for="employeePercent">Your 401(k) contribution (% of salary)</label>
+      <input type="number" id="employeePercent" placeholder="e.g. 10">
+
+      <label for="employerMatchPercent">Employer match (% of salary)</label>
+      <input type="number" id="employerMatchPercent" placeholder="e.g. 4">
+
+      <label for="employerMatchLimit">Employer match up to (% of salary)</label>
+      <input type="number" id="employerMatchLimit" placeholder="e.g. 4">
+
+      <label for="growthYears">Years you plan to keep contributing</label>
+      <input type="number" id="growthYears" placeholder="e.g. 25">
+
+      <label for="annualReturn">Expected average annual return (%)</label>
+      <input type="number" id="annualReturn" placeholder="e.g. 7" step="0.1">
+    </section>
+
+    <!-- Tool 2: Balance at retirement -->
+    <section id="retirement" class="age-tool" style="display:none;">
+      <h2 class="tool-heading">Estimate 401(k) balance at retirement age</h2>
+
+      <label for="currentAge">Current age</label>
+      <input type="number" id="currentAge" placeholder="e.g. 35">
+
+      <label for="retireAge">Target retirement age</label>
+      <input type="number" id="retireAge" placeholder="e.g. 67">
+
+      <label for="currentBalance2">Current 401(k) balance ($)</label>
+      <input type="number" id="currentBalance2" placeholder="e.g. 15000">
+
+      <label for="annualSalary2">Annual salary ($)</label>
+      <input type="number" id="annualSalary2" placeholder="e.g. 60000">
+
+      <label for="employeePercent2">Your 401(k) contribution (% of salary)</label>
+      <input type="number" id="employeePercent2" placeholder="e.g. 10">
+
+      <label for="employerMatchPercent2">Employer match (% of salary)</label>
+      <input type="number" id="employerMatchPercent2" placeholder="e.g. 4">
+
+      <label for="employerMatchLimit2">Employer match up to (% of salary)</label>
+      <input type="number" id="employerMatchLimit2" placeholder="e.g. 4">
+
+      <label for="annualReturn2">Expected average annual return (%)</label>
+      <input type="number" id="annualReturn2" placeholder="e.g. 7" step="0.1">
+    </section>
+
+    <!-- Tool 3: Early withdrawal -->
+    <section id="withdrawal" class="age-tool" style="display:none;">
+      <h2 class="tool-heading">Early 401(k) withdrawal taxes, penalty and IRS exceptions</h2>
+
+      <label for="withdrawAmount">Amount you are thinking of withdrawing ($)</label>
+      <input type="number" id="withdrawAmount" placeholder="e.g. 10000">
+
+      <label for="ageNow">Your age</label>
+      <input type="number" id="ageNow" placeholder="e.g. 40">
+
+      <label for="federalTaxRate">Estimated federal tax rate (%)</label>
+      <input type="number" id="federalTaxRate" placeholder="e.g. 22" step="0.1">
+
+      <label for="stateTaxRate">Estimated state tax rate (%)</label>
+      <input type="number" id="stateTaxRate" placeholder="e.g. 5" step="0.1">
+
+      <label for="exceptionType">Possible IRS exception (optional)</label>
+      <select id="exceptionType">
+        <option value="none">No known exception</option>
+        <option value="disability">Total and permanent disability</option>
+        <option value="medical">Qualifying medical expenses</option>
+        <option value="separation55">Separate from employer at age 55+</option>
+        <option value="substantiallyEqual">Substantially equal periodic payments (SEPP)</option>
+        <option value="firstHome">Certain first‑time home purchase from IRA (not 401(k))</option>
+      </select>
+    </section>
+
+    <button id="calculateBtn">Calculate</button>
+
+    <p id="result"></p>
+    <div id="kDetails" style="margin-top:10px;font-size:14px;"></div>
+  </div>
+
+  <section class="seo-content">
+    <h2>How This 401(k) Calculator Can Be Used</h2>
+    <p>
+      The projections on this page use simplified assumptions to give you a rough idea of how your 401(k) contributions, employer match and investment returns might add up over time. 
+      They can be a useful starting point for conversations with a financial professional or for comparing different saving scenarios.
+    </p>
+    <p>
+      The early withdrawal section highlights how income taxes and potential IRS penalties can reduce the amount you actually receive if you take money out of a traditional 401(k) before typical retirement age. 
+      It is only an estimate and does not replace personalised tax advice or plan guidance.
+    </p>
+  </section>
+
+  <section class="faq-section">
+    <h2>Important Disclaimer</h2>
+    <p style="font-size:14px;">
+      This 401(k) calculator does not know your full financial situation, plan rules or future tax law. 
+      All results are hypothetical and for education only. For detailed retirement planning or tax questions, always speak with a qualified advisor, tax professional or plan administrator.
+    </p>
+  </section>
+
+  <section class="faq-section">
+    <h2>401(k) Calculator FAQs</h2>
+  
+    <div class="faq-item">
+      <button class="faq-question">
+        What does this 401(k) calculator estimate?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          This calculator estimates how your 401(k) balance might grow over time based on your current balance, salary, contribution rate, employer match and an assumed average annual return. It also gives a simplified illustration of potential taxes and penalties on early withdrawals.
+        </p>
+      </div>
+    </div>
+  
+    <div class="faq-item">
+      <button class="faq-question">
+        Are the results guaranteed or exact?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          No. The results are hypothetical examples that depend on the numbers you enter and on constant assumptions. Actual 401(k) balances, investment returns, fees and tax outcomes will differ from these estimates.
+        </p>
+      </div>
+    </div>
+  
+    <div class="faq-item">
+      <button class="faq-question">
+        How is the employer match calculated in this tool?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          The calculator uses the employer match percentage and “match up to” percentage you enter to estimate how much your employer might add each year. Real‑world plan rules can be more complex, so check your plan documents for precise matching formulas and limits.
+        </p>
+      </div>
+    </div>
+  
+    <div class="faq-item">
+      <button class="faq-question">
+        How does the early withdrawal penalty section work?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          For traditional 401(k) accounts, the early withdrawal tool applies the federal and state tax rates you enter and, when age is under 59½, it normally adds a 10% early distribution penalty. If you select a potential IRS exception, the calculator shows how the penalty might change in that scenario while still applying regular income tax.
+        </p>
+      </div>
+    </div>
+  
+    <div class="faq-item">
+      <button class="faq-question">
+        Does choosing an IRS exception here mean I qualify in real life?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          No. The exception options are for educational illustration only and do not confirm that you qualify. IRS rules contain detailed requirements and may change over time. Always confirm your actual eligibility with a tax professional, financial advisor or plan administrator before taking a withdrawal.
+        </p>
+      </div>
+    </div>
+  
+    <div class="faq-item">
+      <button class="faq-question">
+        Is this 401(k) calculator giving me financial or tax advice?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          This calculator is an informational tool and does not provide personalised financial, investment or tax advice. Important decisions about retirement savings and withdrawals should be made together with a qualified professional who understands your full situation.
+        </p>
+      </div>
+    </div>
+  </section>
+  
+
+</main>
+
+<aside class="related-calculators">
+  <h2>Related Calculators</h2>
+  <ul>
+    <li><a href="sip-calculator.html">SIP &amp; Investment Calculator</a></li>
+    <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+    <li><a href="salary-calculator.html">Salary Calculator</a></li>
+    <li><a href="roi-calculator.html">ROI Calculator</a></li>
+  </ul>
+</aside>
+
+<footer>
+  <a href="../../about.html">about us</a> |
+  <a href="../../sitemap.xml">sitemap</a> |
+  <a href="../../terms-and-conditions.html">terms of use</a> |
+  <a href="../../privacy-policy.html">privacy policy</a>
+  <br><br>
+  &copy; 2025 yoursimplecalculator.com
+</footer>
+
+<script src="../../js/401k.js"></script>
+<script>
+  document.querySelectorAll(".faq-question").forEach(function (button) {
+    button.addEventListener("click", function () {
+      button.parentElement.classList.toggle("active");
+    });
+  });
+</script>
+
+
+</body>
+</html>

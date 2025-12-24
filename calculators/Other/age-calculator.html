@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Age Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does an age calculator work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An age calculator works by finding the difference between a date of birth and a selected reference date, then expressing that difference in years, months, and days using a standard calendar calculation method."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I calculate age on a future date with this tool?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, you can calculate how old someone will be on a future date by selecting a custom reference date. The age calculator will show the age as of that chosen day instead of only using today’s date."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this age calculator suitable for official use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This age calculator provides accurate calendar-based results, but for official purposes you should always verify age details with valid documents such as a birth certificate or government-issued identification if requested by the organisation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the age calculator consider leap years and different month lengths?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A well-implemented age calculator takes actual calendar dates into account, including leap years and different month lengths, so the age shown in years, months, and days reflects the real time passed between the two dates."
+      }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="../../index.html">
+        <img src="../../images/logo.png" alt="Your Simple Calculator">
+      </a>
+    </div>
+    <nav class="main-nav">
+      <a href="../../financial.html">Financial</a>
+      <a href="../../health.html">Fitness & Health</a>
+      <a href="../../math.html">Math</a>
+      <a href="../../other.html">Other</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+   <nav class="breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span>›</span>
+  <a href="../../other.html">Other</a>
+  <span>›</span>
+  <span>Age Calculator</span>
+</nav>
+
+  <h1>Age Calculator</h1>
+  <!-- AdSense: in-article / below title -->
+<ins class="adsbygoogle"
+     style="display:block; text-align:center; margin:16px 0;"
+     data-ad-client="ca-pub-XXXXXXXXXXXX"
+     data-ad-slot="1111111111"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+  <section class="seo-intro">
+  <p>
+    This <strong>Age Calculator</strong> helps you quickly find the exact age in years, months, and days from a selected date of birth to today or to any custom date you choose.
+  </p>
+
+  <p>
+    Use it when you need an accurate age for forms, exams, events, or just out of curiosity, without manually counting days, months, and leap years.
+  </p>
+</section>
+
+
+  <section class="content-section">
+  <h2>About Age Calculator</h2>
+  <p>
+    Age Calculator helps calculate your exact age in years, months, and days
+    based on your date of birth. It is useful for official records, exams, and applications.
+  </p>
+</section>
+
+
+  <div class="calculator-box">
+
+  <div class="age-tabs">
+    <button type="button" class="age-tab active" data-mode="dob-to-today">
+      Age from date of birth (today)
+    </button>
+    <button type="button" class="age-tab" data-mode="dob-to-ref">
+      Age on a specific date
+    </button>
+    <button type="button" class="age-tab" data-mode="diff-between">
+      Difference between two dates
+    </button>
+  </div>
+
+  <!-- Age from DOB to today -->
+  <section id="dob-to-today" class="age-tool">
+    <h2 class="tool-heading">Calculate age from date of birth to today</h2>
+    <label for="dobToday">Date of birth</label>
+    <input type="date" id="dobToday">
+  </section>
+
+  <!-- Age from DOB to reference date -->
+  <section id="dob-to-ref" class="age-tool" style="display:none;">
+    <h2 class="tool-heading">Calculate age on a specific date</h2>
+    <label for="dobRef">Date of birth</label>
+    <input type="date" id="dobRef">
+
+    <label for="refDate">Reference date</label>
+    <input type="date" id="refDate">
+  </section>
+
+  <!-- Difference between two dates -->
+  <section id="diff-between" class="age-tool" style="display:none;">
+    <h2 class="tool-heading">Find difference between two dates</h2>
+    <label for="startDate">Start date</label>
+    <input type="date" id="startDate">
+
+    <label for="endDate">End date</label>
+    <input type="date" id="endDate">
+  </section>
+
+  <button id="calculateBtn">Calculate</button>
+  <p id="result"></p>
+  <div id="ageDetails" style="margin-top:10px;font-size:14px;"></div>
+  </div>
+
+  <section class="seo-content">
+  <h2>What Does an Age Calculator Do?</h2>
+  <p>
+    An age calculator works out how much time has passed between a date of birth and a selected reference date. It converts the difference into years, months, and days so you get a clear and precise age instead of an approximate guess.
+  </p>
+
+  <h2>When Is an Online Age Calculator Useful?</h2>
+  <p>
+    An online age calculator is useful when you are filling official forms, checking age limits for exams, events, or memberships, or verifying eligibility for schemes that use age as a condition. It saves time and reduces the chance of manual calculation errors.
+  </p>
+
+  <h2>Which Inputs Are Needed for Age Calculation?</h2>
+  <p>
+    To calculate age, you usually need a date of birth and a reference date. The reference date can be today’s date or any other date in the past or future, depending on the requirement you are checking.
+  </p>
+
+  <h2>How Can This Age Calculator Help in Everyday Tasks?</h2>
+  <p>
+    This age calculator helps you respond quickly whenever age-related details are required. By providing instant, clear results, it makes it easier to complete registrations, applications, or planning tasks that depend on accurate age information.
+  </p>
+</section>
+<section class="faq-section">
+  <h2>FAQs</h2>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      How does an age calculator work?
+      <span class="icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>
+        An age calculator finds the difference between a date of birth and a selected reference date, then expresses that difference in years, months, and days using a standard calendar calculation method.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      Can I calculate age on a future date with this tool?
+      <span class="icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>
+        Yes, you can calculate how old a person will be on a future date by selecting a custom reference date. The calculator will show the age as of that chosen day instead of only using today’s date.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      Is this age calculator suitable for official use?
+      <span class="icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>
+        This age calculator provides accurate calendar-based results, but for official purposes you should always verify age details with valid documents such as a birth certificate or government-issued ID if required by the organisation.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      Does the age calculator consider leap years and different month lengths?
+      <span class="icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>
+        A well-designed age calculator considers actual calendar dates, including leap years and varying month lengths, so the age shown in years, months, and days reflects real time passed between the two dates.
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+
+
+<aside class="related-calculators">
+  <h2>Related Calculators</h2>
+  <ul>
+    <li>
+      <a href="../Financial/sip-calculator.html">SIP Calculator</a>
+    </li>
+    <li>
+      <a href="../Financial/compound-interest-calculator.html">Compound Interest Calculator</a>
+    </li>
+    <li>
+      <a href="../Financial/roi-calculator.html">ROI Calculator</a>
+    </li>
+  </ul>
+</aside>
+
+<footer>
+  <a href="about.html">about us</a> |
+  <a href="sitemap.xml">sitemap</a> |
+  <a href="terms.html">terms of use</a> |
+  <a href="privacy.html">privacy policy</a>
+  <br><br>
+  © 2025 yoursimplecalculator.com
+</footer>
+<script src="../../js/age.js"></script>
+<script>
+  document.querySelectorAll(".faq-question").forEach(function (button) {
+    button.addEventListener("click", function () {
+      button.parentElement.classList.toggle("active");
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Interest Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- IMPORTANT -->
+  <link rel="stylesheet" href="../../css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is simple interest in basic terms?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Simple interest is interest calculated only on the original amount of money borrowed or invested, without adding previous interest to the principal for future calculations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What formula does this simple interest calculator use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This simple interest calculator uses the standard simple interest approach, where the interest is calculated using the principal amount, the annual rate of interest, and the time period to estimate the interest and total amount."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is simple interest different from compound interest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Simple interest is calculated only on the principal amount for the full period, while compound interest is calculated on the principal plus any interest that has already been added in previous periods."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use this calculator for short-term and long-term loans?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, this simple interest calculator can be used for both short-term and long-term loans or deposits, as long as the interest is applied on a simple, non-compounding basis for the selected time period."
+      }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header">
+  <div class="header-container">
+<div class="logo">
+  <a href="../../index.html">
+    <img src="../../images/logo.png" alt="Your Simple Calculator">
+  </a>
+</div>
+
+
+    <nav class="main-nav">
+      <a href="../../financial.html">Financial</a>
+      <a href="../../health.html">Fitness & Health</a>
+      <a href="../../math.html">Math</a>
+      <a href="../../other.html">Other</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= MAIN CONTENT ================= -->
+<main class="container">
+  <nav class="breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span>›</span>
+  <a href="../../financial.html">Financial</a>
+  <span>›</span>
+  <span>Simple Interest Calculator</span>
+</nav>
+
+
+  <h1>Simple Interest Calculator</h1>
+  <!-- AdSense: in-article / below title -->
+<ins class="adsbygoogle"
+     style="display:block; text-align:center; margin:16px 0;"
+     data-ad-client="ca-pub-XXXXXXXXXXXX"
+     data-ad-slot="1111111111"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<section class="seo-intro">
+  <p>
+    This <strong>Simple Interest Calculator</strong> helps you quickly estimate the interest you earn or pay on a fixed principal amount over a specific period at a constant interest rate.
+  </p>
+
+  <p>
+    Enter the principal, rate of interest, and time period to see the simple interest and total amount, so you can understand the cost of borrowing or the return on a basic savings or loan arrangement.
+  </p>
+</section>
+
+  <div class="calculator-box">
+  <label for="siCurrency">Currency (display only)</label>
+  <select id="siCurrency">
+    <option value="IN">India (₹)</option>
+    <option value="US">United States ($)</option>
+    <option value="UK">United Kingdom (£)</option>
+    <option value="EU">Europe (€)</option>
+    <option value="AU">Australia ($)</option>
+  </select>
+
+  <label for="siType">What do you want to find?</label>
+  <select id="siType">
+    <option value="interest">Interest &amp; total amount</option>
+    <option value="principal">Required principal</option>
+    <option value="rate">Required interest rate</option>
+    <option value="time">Required time</option>
+  </select>
+
+  <label for="principal" class="field-principal">Principal amount</label>
+  <input type="number" id="principal" class="field-principal" placeholder="Enter principal">
+
+  <label for="rate" class="field-rate">Annual interest rate (%)</label>
+  <input type="number" id="rate" class="field-rate" placeholder="Enter annual rate" step="0.1">
+
+  <label for="time" class="field-time">Time period</label>
+  <input type="number" id="time" class="field-time" placeholder="Enter time period">
+
+  <label for="timeUnit" class="field-time">Time unit</label>
+  <select id="timeUnit" class="field-time">
+    <option value="years">Years</option>
+    <option value="months">Months</option>
+    <option value="days">Days</option>
+  </select>
+
+  <label for="targetAmount" id="targetLabel" class="field-target" style="display:none;">
+    Target total amount
+  </label>
+  <input
+    type="number"
+    id="targetAmount"
+    class="field-target"
+    placeholder="Enter target total amount"
+    style="display:none;"
+  >
+
+  <button id="calculateBtn">Calculate</button>
+  <p id="result"></p>
+</div>
+
+
+
+  <section class="seo-content">
+  <h2>What Is Simple Interest?</h2>
+  <p>
+    Simple interest is calculated only on the original principal amount for the entire duration of the loan or investment. The interest does not compound, which makes the calculation straightforward and easier to understand.
+  </p>
+
+  <h2>Why Use a Simple Interest Calculator?</h2>
+  <p>
+    A simple interest calculator saves time by performing the calculation for you and reducing the chances of manual errors. It helps you compare different loan or deposit options where interest is charged or paid on a flat basis.
+  </p>
+
+  <h2>Which Inputs Do You Need for Simple Interest?</h2>
+  
+  <p>
+  To calculate simple interest, you usually need the principal amount, the annual rate of interest, and the time period. This calculator also lets you choose different time units and, if needed, work backwards to estimate the principal, rate, or time required to reach a target amount.
+  </p>
+
+
+  <h2>How Can This Simple Interest Calculator Help in Planning?</h2>
+  <p>
+    This simple interest calculator helps you understand how much interest is associated with a loan or deposit before you make a decision. By adjusting the principal, rate, or time, you can see how each factor affects the final amount you owe or receive.
+  </p>
+</section>
+
+<section class="faq-section">
+  <h2>FAQs</h2>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      What is simple interest in basic terms?
+      <span class="icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>
+        Simple interest is interest calculated only on the original amount of money borrowed or invested, without adding previous interest to the principal for future calculations.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      What formula does this simple interest calculator use?
+      <span class="icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>
+        This simple interest calculator typically uses the standard formula where interest is calculated on the principal, the annual rate of interest, and the time period to estimate the interest amount and total value.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      How is simple interest different from compound interest?
+      <span class="icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>
+        Simple interest is calculated only on the principal amount, while compound interest is calculated on the principal plus the interest that has already been added during previous periods.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      Can I use this calculator for short-term and long-term loans?
+      <span class="icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>
+        Yes, you can use this simple interest calculator for both short-term and long-term loans or deposits, as long as the interest is applied on a simple, non-compounding basis for the chosen time period.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+<aside class="related-calculators">
+  <h2>Related Calculators</h2>
+  <ul>
+    <li>
+      <a href="sip-calculator.html">SIP Calculator</a>
+    </li>
+    <li>
+      <a href="compound-interest-calculator.html">Compound Interest Calculator</a>
+    </li>
+    <li>
+      <a href="roi-calculator.html">ROI Calculator</a>
+    </li>
+  </ul>
+</aside>
+
+<footer>
+  <a href="../../about.html">about us</a> |
+  <a href="../../sitemap.xml">sitemap</a> |
+  <a href="../../terms-and-conditions.html">terms of use</a> |
+  <a href="../../privacy-policy.html">privacy policy</a>
+  <br><br>
+  © 2025 yoursimplecalculator.com
+</footer>
+<script src="../../js/simple-interest.js"></script>
+<script>
+  document.querySelectorAll(".faq-question").forEach(function (button) {
+    button.addEventListener("click", function () {
+      button.parentElement.classList.toggle("active");
+    });
+  });
+</script>
+
+</body>
+</html>

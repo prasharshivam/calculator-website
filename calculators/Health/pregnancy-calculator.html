@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pregnancy Due Date Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../css/style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does a pregnancy calculator estimate my due date?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A pregnancy calculator usually estimates your due date by adding a standard number of days to the first day of your last menstrual period or to an approximate conception date, following commonly used medical guidelines."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can this pregnancy calculator confirm that I am pregnant?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, this pregnancy calculator cannot confirm a pregnancy. It is only a general information tool, and confirmation should always be done through approved tests and consultation with a healthcare professional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is my doctor’s due date slightly different from this calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A doctor may adjust the estimated due date based on medical examinations, ultrasound measurements, and your personal health history. These clinical assessments are more specific than the estimates from an online calculator."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Should I rely only on this pregnancy calculator for planning my pregnancy?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You should not rely only on this pregnancy calculator for making important pregnancy decisions. It is best used as a starting point together with regular check-ups, advice, and guidance from your doctor or healthcare team."
+      }
+    }
+  ]
+}
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXX"
+        crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="../../index.html">
+        <img src="../../images/logo.png" alt="Your Simple Calculator">
+      </a>
+    </div>
+    <nav class="main-nav">
+      <a href="../../financial.html">Financial</a>
+      <a href="../../health.html">Fitness & Health</a>
+      <a href="../../math.html">Math</a>
+      <a href="../../other.html">Other</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+   <nav class="breadcrumb">
+  <a href="../../index.html">Home</a>
+  <span>›</span>
+  <a href="../../health.html">Health</a>
+  <span>›</span>
+  <span>Pregnancy Due Date Calculator</span>
+</nav>
+  <h1>Pregnancy Due Date Calculator</h1>
+  <!-- AdSense: in-article / below title -->
+<ins class="adsbygoogle"
+     style="display:block; text-align:center; margin:16px 0;"
+     data-ad-client="ca-pub-XXXXXXXXXXXX"
+     data-ad-slot="1111111111"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+  <section class="seo-intro">
+  <p>
+    This <strong>Pregnancy Calculator</strong> provides an estimated due date and pregnancy timeline based on the first day of your last menstrual period or the date of conception, depending on the method you use.
+  </p>
+
+  <p>
+    The result is only an approximate guide and not a medical diagnosis, but it can help you understand which week of pregnancy you may be in and start planning discussions with your healthcare provider.
+  </p>
+</section>
+
+
+  <div class="calculator-box">
+
+  <div class="preg-tabs">
+    <button type="button" class="preg-tab active" data-mode="lmp-to-due">
+      Due date from last period (LMP)
+    </button>
+    <button type="button" class="preg-tab" data-mode="conception-to-due">
+      Due date from conception date
+    </button>
+    <button type="button" class="preg-tab" data-mode="lmp-to-week">
+      Current pregnancy week from LMP
+    </button>
+    <button type="button" class="preg-tab" data-mode="due-to-lmp">
+      Estimate LMP from due date
+    </button>
+  </div>
+
+  <!-- LMP → Due date -->
+  <section id="lmp-to-due" class="preg-tool">
+    <h2 class="tool-heading">Estimate due date from last period (LMP)</h2>
+    <label for="lmp">First day of last menstrual period (LMP)</label>
+    <input type="date" id="lmp">
+  </section>
+
+  <!-- Conception → Due date -->
+  <section id="conception-to-due" class="preg-tool" style="display:none;">
+    <h2 class="tool-heading">Estimate due date from conception date</h2>
+    <label for="conceptionDate">Approximate conception date</label>
+    <input type="date" id="conceptionDate">
+  </section>
+
+  <!-- LMP → current week -->
+  <section id="lmp-to-week" class="preg-tool" style="display:none;">
+    <h2 class="tool-heading">Find current pregnancy week from LMP</h2>
+    <label for="lmpWeek">First day of last menstrual period (LMP)</label>
+    <input type="date" id="lmpWeek">
+  </section>
+
+  <!-- Due date → LMP -->
+  <section id="due-to-lmp" class="preg-tool" style="display:none;">
+    <h2 class="tool-heading">Estimate last menstrual period (LMP) from due date</h2>
+    <label for="dueDate">Estimated due date</label>
+    <input type="date" id="dueDate">
+  </section>
+
+  <button id="calculateBtn">Calculate</button>
+
+  <p id="result"></p>
+  <div id="pregDetails" style="margin-top:10px;font-size:14px;"></div>
+</div>
+
+
+  <section class="seo-content">
+  <h2>What Does a Pregnancy Calculator Do?</h2>
+  <p>
+    A pregnancy calculator estimates your expected due date and current week of pregnancy using commonly followed medical guidelines. It uses key dates, such as the first day of your last period or an approximate conception date, to build a basic pregnancy timeline.
+  </p>
+
+  <h2>How Reliable Is the Estimated Due Date?</h2>
+  <p>
+    The due date generated by a pregnancy calculator is an estimate and not a guarantee. Many pregnancies do not follow the exact calculated date, and only a doctor or qualified healthcare professional can provide clinical confirmation through check-ups and scans.
+  </p>
+
+  <h2>Which Inputs Are Usually Needed for a Pregnancy Calculator?</h2>
+  <p>
+    Most pregnancy calculators ask for the first day of your last menstrual period or the date of conception if known. Using this information, the calculator applies a standard counting method to estimate the expected due date and pregnancy week.
+  </p>
+
+  <h2>How Should You Use This Pregnancy Calculator?</h2>
+  <p>
+    This pregnancy calculator is meant to be a supportive tool to help you understand a possible pregnancy timeline. It should not replace regular medical care, and any questions or concerns about your health or your baby should always be discussed with a qualified healthcare professional.
+  </p>
+</section>
+<section class="faq-section">
+  <h2>FAQs</h2>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      How does a pregnancy calculator estimate my due date?
+      <span class="icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>
+        A pregnancy calculator usually estimates your due date by adding a standard number of days to the first day of your last menstrual period or to an approximate conception date, following commonly used medical guidelines.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      Can this pregnancy calculator confirm that I am pregnant?
+      <span class="icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>
+        No, this pregnancy calculator cannot confirm a pregnancy. It is only a general information tool, and confirmation should always be done through approved tests and consultation with a healthcare professional.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      Why is my doctor’s due date slightly different from this calculator?
+      <span class="icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>
+        Doctors may adjust the estimated due date based on medical examinations, ultrasound measurements, and your individual health history. These clinical assessments are more specific than any general online calculator result.
+      </p>
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question">
+      Should I rely only on this pregnancy calculator for planning my pregnancy?
+      <span class="icon">+</span>
+    </button>
+    <div class="faq-answer">
+      <p>
+        No, you should not rely only on this calculator for important pregnancy decisions. It is best used as a starting point alongside regular check-ups, advice, and guidance from your doctor or healthcare team.
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<aside class="related-calculators">
+  <h2>Related Calculators</h2>
+  <ul>
+    <li>
+      <a href="bmi-calculator.html">BMI Calculator</a>
+    </li>
+    <li>
+      <a href="../Other/age-calculator.html">Age Calculator</a>
+    </li>
+  </ul>
+</aside>
+
+<footer>
+  <a href="about.html">about us</a> |
+  <a href="sitemap.xml">sitemap</a> |
+  <a href="terms.html">terms of use</a> |
+  <a href="privacy.html">privacy policy</a>
+  <br><br>
+  © 2025 yoursimplecalculator.com
+</footer>
+<script src="../../js/pregnancy.js"></script>
+<script>
+  document.querySelectorAll(".faq-question").forEach(function (button) {
+    button.addEventListener("click", function () {
+      button.parentElement.classList.toggle("active");
+    });
+  });
+</script>
+
+</body>
+</html>
