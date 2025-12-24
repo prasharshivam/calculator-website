@@ -10,66 +10,67 @@
 
   <!-- Core Calculators -->
   <url>
-    <loc>https://www.yoursite.com/calculators/sip-calculator.html</loc>
+    <loc>https://www.yoursimplecalculator.com/calculators/sip-calculator.html</loc>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.yoursite.com/calculators/mortgage-calculator.html</loc>
+    <loc>https://www.yoursimplecalculator.com/calculators/mortgage-calculator.html</loc>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.yoursite.com/calculators/compound-interest-calculator.html</loc>
+    <loc>https://www.yoursimplecalculator.com/calculators/compound-interest-calculator.html</loc>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.yoursite.com/calculators/age-calculator.html</loc>
+    <loc>https://www.yoursimplecalculator.com/calculators/age-calculator.html</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.yoursite.com/calculators/bmi-calculator.html</loc>
+    <loc>https://www.yoursimplecalculator.com/calculators/bmi-calculator.html</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.yoursite.com/calculators/loan-emi-calculator.html</loc>
+    <loc>https://www.yoursimplecalculator.com/calculators/loan-emi-calculator.html</loc>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://www.yoursite.com/calculators/salary-calculator.html</loc>
+    <loc>https://www.yoursimplecalculator.com/calculators/salary-calculator.html</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.yoursite.com/calculators/roi-calculator.html</loc>
+    <loc>https://www.yoursimplecalculator.com/calculators/roi-calculator.html</loc>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://www.yoursite.com/calculators/pregnancy-calculator.html</loc>
+    <loc>https://www.yoursimplecalculator.com/calculators/pregnancy-calculator.html</loc>
     <priority>0.8</priority>
   </url>
 
   <!-- Informational Pages -->
   <url>
-    <loc>https://www.yoursite.com/about.html</loc>
+    <loc>https://www.yoursimplecalculator.com/about.html</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.yoursite.com/privacy-policy.html</loc>
+    <loc>https://www.yoursimplecalculator.com/privacy-policy.html</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.yoursite.com/terms-and-conditions.html</loc>
+    <loc>https://www.yoursimplecalculator.com/terms-and-conditions.html</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.yoursite.com/contact.html</loc>
+    <loc>https://www.yoursimplecalculator.com/contact.html</loc>
     <priority>0.5</priority>
   </url>
 
 </urlset>
+
