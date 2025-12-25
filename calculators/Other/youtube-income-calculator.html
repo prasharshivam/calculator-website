@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YouTube Income Calculator – Estimate YouTube Earnings by Country & Niche</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free YouTube income calculator to estimate daily, monthly and yearly earnings from YouTube views. Choose your niche, country and RPM range to see potential YouTube ad revenue.">
+
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How does this YouTube income calculator work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This YouTube income calculator estimates earnings using a simple RPM-based formula: Income = Views × RPM ÷ 1000. You select your content type and primary audience country, and the tool applies a realistic RPM range for that combination."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is RPM on YouTube?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "RPM stands for revenue per 1,000 views and shows how much you actually earn per 1,000 views after YouTube takes its share. It is calculated as (Total YouTube revenue ÷ Total views) × 1000 and usually ranges from $0.50 to $20+ depending on country and niche."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are these YouTube earnings guaranteed?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No, the values are rough estimates based on public RPM data by country and niche. Real earnings depend on audience location, watch time, ad formats, seasonality, advertiser demand and how monetisation is set up on your channel."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which niches earn the highest RPM on YouTube?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Finance, business, software, B2B and luxury content usually earn the highest RPMs, sometimes above $15–$30 per 1,000 views. Gaming, entertainment and vlogs often have lower RPMs but can make up for it with much higher view counts."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use this calculator for Shorts revenue?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can get a rough idea by entering Shorts views, but Shorts monetisation has a different revenue pool and RPM can be very different from long-form videos. Treat the result as a loose upper or lower bound, not a precise projection."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="../../index.html">
+        <img src="../../images/logo.png" alt="Your Simple Calculator">
+      </a>
+    </div>
+    <nav class="main-nav">
+      <a href="../../financial.html">Financial</a>
+      <a href="../../health.html">Fitness & Health</a>
+      <a href="../../math.html">Math</a>
+      <a href="../../other.html">Other</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <nav class="breadcrumb">
+    <a href="../../index.html">Home</a>
+    <span>›</span>
+    <a href="../../financial.html">Financial</a>
+    <span>›</span>
+    <span>YouTube Income Calculator</span>
+  </nav>
+
+  <h1>YouTube Income Calculator</h1>
+
+  <section class="seo-intro">
+    <p>
+      Use this <strong>YouTube income calculator</strong> to estimate how much a channel or video could earn from ads based on views, content niche, and the main country of your audience.
+    </p>
+    <p>
+      Enter your daily or monthly views, select a content type, choose where your viewers mostly come from, and get a realistic earning range in seconds.
+    </p>
+  </section>
+
+  <div class="calculator-box sip-enhanced">
+
+    <div class="tab-content active" id="yt-main">
+      <label for="ytCurrency">Currency (display only)</label>
+      <select id="ytCurrency">
+        <option value="USD">USD ($)</option>
+        <option value="INR">INR (₹)</option>
+        <option value="EUR">EUR (€)</option>
+      </select>
+
+      <label for="ytViews">Views</label>
+      <input type="number" id="ytViews" placeholder="Enter number of views (e.g. 100000)" value="100000">
+
+      <label for="ytPeriod">Period</label>
+      <select id="ytPeriod">
+        <option value="day">Daily views</option>
+        <option value="month" selected>Monthly views</option>
+        <option value="year">Yearly views</option>
+      </select>
+
+      <label for="ytCountry">Primary audience country</label>
+      <select id="ytCountry">
+        <option value="US">United States / Canada / UK</option>
+        <option value="EU">Western Europe</option>
+        <option value="IN">India / South Asia</option>
+        <option value="BR">Brazil / Latin America</option>
+        <option value="OTHER">Other regions (mixed)</option>
+      </select>
+
+      <label for="ytNiche">Content type / niche</label>
+      <select id="ytNiche">
+        <option value="finance">Finance, business, make money online</option>
+        <option value="tech">Tech, software, gadgets</option>
+        <option value="education">Education, how-to, study</option>
+        <option value="health">Health & fitness</option>
+        <option value="gaming">Gaming</option>
+        <option value="entertainment">Vlogs, entertainment, lifestyle</option>
+        <option value="kids">Kids content</option>
+      </select>
+
+      <label for="ytCustomRPM">Optional: custom RPM (per 1000 views)</label>
+      <input type="number" id="ytCustomRPM" placeholder="Leave blank to use estimated RPM" step="0.1">
+
+      <button id="ytCalcBtn">Estimate YouTube Income</button>
+    </div>
+
+    <div id="resultBox" class="result-box"></div>
+    <div id="growthChart"></div>
+  </div>
+
+  <section class="seo-content">
+    <h2>YouTube Income Formula Used</h2>
+    <p>
+      This calculator uses the standard YouTube RPM equation: estimated income equals total views multiplied by RPM, divided by 1000. RPM is revenue per 1,000 views and includes ads, Premium and other monetisation sources.[web:321][web:329]
+    </p>
+    <p>
+      Country and niche strongly affect RPM, so the calculator applies different default RPM ranges for finance, tech, education, gaming and entertainment content across high‑RPM and low‑RPM regions.[web:311][web:314][web:323]
+    </p>
+
+    <h2>How Country and Niche Change YouTube Earnings</h2>
+    <p>
+      Channels with most viewers in the United States, Canada or Western Europe often see much higher RPMs than those with primarily South Asian or Latin American audiences at similar view counts.[web:313][web:318][web:319]
+    </p>
+    <p>
+      Finance and business topics usually earn the highest RPMs, followed by software, education and health; gaming and general entertainment often earn less per view but can scale through volume.[web:314][web:320]
+    </p>
+
+    <h2>Daily, Monthly and Yearly YouTube Revenue View</h2>
+    <p>
+      After you enter your views, the calculator converts them into daily, monthly and yearly earning estimates so you can see whether your idea supports a side‑income or a full‑time creator career.[web:312][web:317]
+    </p>
+    <p>
+      Treat these numbers as planning benchmarks, then compare them with your actual YouTube Analytics RPM to refine the assumptions over time.[web:329][web:325]
+    </p>
+  </section>
+
+  <section class="faq-section">
+    <h2>YouTube Income Calculator FAQs</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        How accurate is this YouTube income calculator?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          It provides a realistic range based on average RPMs by country and niche. Real channels can earn more or less depending on audience retention, ad formats, seasonality and how many videos are fully monetised.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        What RPM values does the tool assume?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          For finance and business in high‑income countries the tool uses a higher RPM band, while gaming and entertainment in lower‑income regions use a lower band, roughly aligned with public creator reports for 2024–2025.[web:311][web:314][web:323]
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Can I override the RPM if I know my own numbers?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Yes. Enter your own RPM in the custom RPM box. The calculator will then ignore the presets and compute income only from your value and views, which is ideal once your channel has stable analytics.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Does this include brand deals or sponsorships?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          No. The estimates here are focused on ad and platform revenue only. Sponsorships, affiliate links and product sales can be much larger and need separate planning.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<aside class="related-calculators">
+  <h2>Related Financial Calculators</h2>
+  <ul>
+    <li><a href="roi-calculator.html">ROI Calculator</a></li>
+    <li><a href="sip-calculator.html">SIP Calculator</a></li>
+    <li><a href="salary-calculator.html">Salary Calculator</a></li>
+  </ul>
+</aside>
+
+<footer>
+  <a href="../../about.html">about us</a> |
+  <a href="../../sitemap.xml">sitemap</a> |
+  <a href="../../terms-and-conditions.html">terms of use</a> |
+  <a href="../../privacy-policy.html">privacy policy</a>
+  <br><br>
+  © 2025 yoursimplecalculator.com
+</footer>
+
+<script src="../../js/common.js"></script>
+<script src="../../js/youtube-income.js"></script>
+<script>
+  document.querySelectorAll(".faq-question").forEach(function (button) {
+    button.addEventListener("click", function () {
+      button.parentElement.classList.toggle("active");
+    });
+  });
+</script>
+</body>
+</html>
