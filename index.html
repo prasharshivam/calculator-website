@@ -5,7 +5,7 @@
   <title>Your Simple Calculator – Free Online Calculators</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Your Simple Calculator offers free, easy-to-use online calculators for finance, health, math and everyday life. Check SIP, EMI, mortgage, ROI, BMI, pregnancy dates, age and more in seconds.">
+  <meta name="description" content="Your Simple Calculator offers free, fast and distraction-free online calculators for finance, health, math and everyday life. Plan SIP, EMI, mortgage, ROI, BMI, pregnancy due date, age and more in seconds.">
 
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -29,68 +29,158 @@
   </div>
 </header>
 
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <h1>Free Online Calculators for Real‑Life Decisions</h1>
+      <p>
+        Quickly run the numbers for SIPs, loans, ROI, BMI, pregnancy dates, age and more. 
+        No logins, no clutter – just clean, fast calculators built to answer one question at a time.
+      </p>
+
+      <div class="hero-actions">
+        <a href="calculators/Financial/sip-calculator.html" class="hero-cta">Try SIP Calculator</a>
+        <a href="#financial" class="hero-secondary">Browse all calculators</a>
+      </div>
+
+      <div class="hero-search">
+        <input type="text" id="quickSearch" placeholder="Search: SIP, BMI, age, percentage..." aria-label="Search calculators">
+      </div>
+    </div>
+
+    <div class="hero-highlight">
+      <h2>Most used today</h2>
+      <ul>
+        <li><a href="calculators/Financial/sip-calculator.html">SIP Calculator (with inflation)</a></li>
+        <li><a href="calculators/Financial/mortgage-calculator.html">Mortgage Calculator</a></li>
+        <li><a href="calculators/Health/bmi-calculator.html">BMI Calculator</a></li>
+        <li><a href="calculators/Other/age-calculator.html">Age Calculator</a></li>
+      </ul>
+      <p class="hero-note">Updated for clearer outputs and mobile-first experience.</p>
+    </div>
+  </div>
+</section>
+
 <!-- ================= MAIN CONTENT ================= -->
 <main class="container">
 
-  <h1>Your Simple Calculator – Free Online Calculators</h1>
-  <p>
-    Your Simple Calculator is a collection of fast, distraction‑free tools that help you solve everyday numbers in just a few clicks. 
-    Whether you are planning investments, checking a mortgage, reviewing your health metrics, or doing a quick percentage calculation, you can find a dedicated calculator on this page.
-  </p>
-
   <!-- ================= FINANCIAL ================= -->
-  <section id="financial" class="content-section">
-    <h2>Financial Calculators</h2>
-    <p>
-      Use these financial calculators to explore loan payments, savings growth, returns and salary scenarios before making money decisions. 
-      Results are for guidance only and should be combined with professional advice whenever you are making important financial commitments.
-    </p>
-    <ul class="calculator-list">
-      <li><a href="calculators/Financial/sip-calculator.html">SIP Calculator</a></li>
-      <li><a href="calculators/Financial/simple-interest-calculator.html">Simple Interest Calculator</a></li>
-      <li><a href="calculators/Financial/compound-interest-calculator.html">Compound Interest Calculator</a></li>
-      <li><a href="calculators/Financial/mortgage-calculator.html">Mortgage Calculator</a></li>
-      <li><a href="calculators/Financial/roi-calculator.html">ROI Calculator</a></li>
-      <li><a href="calculators/Financial/salary-calculator.html">Salary Calculator</a></li>
-      <li><a href="calculators/Financial/401k-calculator.html">401k Calculator</a></li>
-    </ul>
+  <section id="financial" class="content-section category-section">
+    <div class="section-header">
+      <h2>Financial Calculators</h2>
+      <p>
+        Plan investments, estimate EMIs and understand returns before taking money decisions. 
+        Use these calculators as a starting point and combine them with personalised financial advice.
+      </p>
+    </div>
+
+    <div class="card-grid" data-category="financial">
+      <a class="calc-card" href="calculators/Financial/sip-calculator.html" data-keywords="sip mutual fund inflation step up goal based">
+        <h3>SIP Calculator</h3>
+        <p>Plan SIPs with inflation, step-up SIP and goal-based reverse calculation.</p>
+        <span class="tag">Investing</span>
+      </a>
+
+      <a class="calc-card" href="calculators/Financial/simple-interest-calculator.html" data-keywords="simple interest loan principal time rate">
+        <h3>Simple Interest Calculator</h3>
+        <p>Find interest, principal, rate or time for basic loans and deposits.</p>
+        <span class="tag">Loans</span>
+      </a>
+
+      <a class="calc-card" href="calculators/Financial/compound-interest-calculator.html" data-keywords="compound interest growth savings">
+        <h3>Compound Interest Calculator</h3>
+        <p>See how money grows with compounding at different rates and durations.</p>
+        <span class="tag">Savings</span>
+      </a>
+
+      <a class="calc-card" href="calculators/Financial/mortgage-calculator.html" data-keywords="mortgage emi home loan payment schedule">
+        <h3>Mortgage Calculator</h3>
+        <p>Estimate home loan EMIs, interest cost and payoff time.</p>
+        <span class="tag">Home Loan</span>
+      </a>
+
+      <a class="calc-card" href="calculators/Financial/roi-calculator.html" data-keywords="roi return on investment percentage gain loss">
+        <h3>ROI Calculator</h3>
+        <p>Calculate return on investment in absolute and percentage terms.</p>
+        <span class="tag">Returns</span>
+      </a>
+
+      <a class="calc-card" href="calculators/Financial/salary-calculator.html" data-keywords="salary in hand ctc tax">
+        <h3>Salary Calculator</h3>
+        <p>Estimate in‑hand salary from CTC and basic assumptions.</p>
+        <span class="tag">Income</span>
+      </a>
+
+      <a class="calc-card" href="calculators/Financial/401k-calculator.html" data-keywords="401k retirement us employer match early withdrawal">
+        <h3>401k Calculator</h3>
+        <p>Model US retirement contributions, employer match and early withdrawals.</p>
+        <span class="tag">Retirement</span>
+      </a>
+    </div>
   </section>
 
   <!-- ================= HEALTH ================= -->
-  <section id="health" class="content-section">
-    <h2>Fitness &amp; Health Calculators</h2>
-    <p>
-      The health section includes simple tools that help you review basic indicators such as body mass index or an estimated pregnancy timeline. 
-      These calculators are informational only and are not a substitute for medical tests, diagnosis, or advice from a qualified healthcare professional.
-    </p>
-    <ul class="calculator-list">
-      <li><a href="calculators/Health/bmi-calculator.html">BMI Calculator</a></li>
-      <li><a href="calculators/Health/pregnancy-calculator.html">Pregnancy Due Date Calculator</a></li>
-    </ul>
+  <section id="health" class="content-section category-section">
+    <div class="section-header">
+      <h2>Fitness &amp; Health Calculators</h2>
+      <p>
+        Quick, educational tools that help you track basic health metrics. 
+        These calculators are informational only and do not replace medical advice.
+      </p>
+    </div>
+
+    <div class="card-grid" data-category="health">
+      <a class="calc-card" href="calculators/Health/bmi-calculator.html" data-keywords="bmi body mass index weight height health">
+        <h3>BMI Calculator</h3>
+        <p>Check your body mass index and basic weight category.</p>
+        <span class="tag">Wellness</span>
+      </a>
+
+      <a class="calc-card" href="calculators/Health/pregnancy-calculator.html" data-keywords="pregnancy due date ovulation trimester calendar">
+        <h3>Pregnancy Due Date Calculator</h3>
+        <p>Estimate due date and key pregnancy milestones.</p>
+        <span class="tag">Pregnancy</span>
+      </a>
+    </div>
   </section>
 
   <!-- ================= MATH ================= -->
-  <section id="math" class="content-section">
-    <h2>Math &amp; Percentage Calculators</h2>
-    <p>
-      Use the math calculators when you quickly need to find percentages, compare values, or check basic number relationships without opening a spreadsheet or writing formulas by hand.
-    </p>
-    <ul class="calculator-list">
-      <li><a href="calculators/Math/percentage-calculator.html">Percentage Calculator</a></li>
-      <!-- Add more math tools here in future -->
-    </ul>
+  <section id="math" class="content-section category-section">
+    <div class="section-header">
+      <h2>Math &amp; Percentage Calculators</h2>
+      <p>
+        Solve everyday math questions faster than opening a spreadsheet or writing formulas.
+      </p>
+    </div>
+
+    <div class="card-grid" data-category="math">
+      <a class="calc-card" href="calculators/Math/percentage-calculator.html" data-keywords="percentage increase discount change of what is">
+        <h3>Percentage Calculator</h3>
+        <p>Find percentages, percentage change and reverse percentages.</p>
+        <span class="tag">Math</span>
+      </a>
+      <!-- Future math tools can be added here -->
+    </div>
   </section>
 
   <!-- ================= OTHER ================= -->
-  <section id="other" class="content-section">
-    <h2>Everyday Utility Calculators</h2>
-    <p>
-      These calculators support everyday tasks such as finding your exact age or other practical values that are often needed for forms, applications, and personal planning.
-    </p>
-    <ul class="calculator-list">
-      <li><a href="calculators/Other/age-calculator.html">Age Calculator</a></li>
-      <!-- Add more utility tools here in future -->
-    </ul>
+  <section id="other" class="content-section category-section">
+    <div class="section-header">
+      <h2>Everyday Utility Calculators</h2>
+      <p>
+        Handy tools for forms, applications and quick planning.
+      </p>
+    </div>
+
+    <div class="card-grid" data-category="other">
+      <a class="calc-card" href="calculators/Other/age-calculator.html" data-keywords="age exact date of birth years months days">
+        <h3>Age Calculator</h3>
+        <p>Find exact age in years, months and days from your date of birth.</p>
+        <span class="tag">Everyday</span>
+      </a>
+      <!-- Future utility calculators go here -->
+    </div>
   </section>
 
 </main>
@@ -105,6 +195,19 @@
   &copy; 2025 yoursimplecalculator.com
 </footer>
 
+<!-- Small script for quick-search filtering -->
+<script>
+  const searchInput = document.getElementById('quickSearch');
+  if (searchInput) {
+    searchInput.addEventListener('input', function () {
+      const q = this.value.toLowerCase().trim();
+      document.querySelectorAll('.calc-card').forEach(card => {
+        const text = (card.textContent + ' ' + (card.dataset.keywords || '')).toLowerCase();
+        card.style.display = q === '' || text.includes(q) ? 'block' : 'none';
+      });
+    });
+  }
+</script>
+
 </body>
 </html>
-
