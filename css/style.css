@@ -732,10 +732,18 @@ footer {
   }
 }
 
+/* YouTube income calculator - reuse SIP enhanced styles */
+#yt-main {
+  /* just ensure padding if different */
+  padding: 28px 28px 10px;
+}
+
+
 /* hide ads until live */
 .adsbygoogle {
   display: none !important;
 }
+
 
 
 
