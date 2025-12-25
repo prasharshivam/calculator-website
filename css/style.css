@@ -660,17 +660,22 @@ footer {
   }
 
   .hero {
-    background: #714007;
-    padding-top: 24px;
-  }
+  /* simpler solid brown so white text always readable */
+  background: #714007;
+  padding: 40px 20px 20px;
+  color: #ffffff;
+}
 
   .hero-inner {
     flex-direction: column;
   }
 
   .hero-text h1 {
-    font-size: 24px;
-  }
+  font-size: 30px;
+  line-height: 1.3;
+  margin-bottom: 15px;
+  color: #ffffff;  /* force white */
+}
 
   .hero-highlight {
     margin-top: 12px;
@@ -700,8 +705,10 @@ footer {
   }
 
   .hero-text p {
-    font-size: 14px;
-  }
+  font-size: 15px;
+  color: #fcebd6;  /* light beige on brown */
+  margin-bottom: 18px;
+}
 
   .hero-actions {
     flex-direction: column;
@@ -717,3 +724,4 @@ footer {
 .adsbygoogle {
   display: none !important;
 }
+
