@@ -452,11 +452,16 @@ footer {
 /* =========================
    HOME HERO
 ========================= */
+/* =========================
+   HOME HERO (fixed)
+========================= */
 .hero {
-  background: linear-gradient(135deg, #714007 0%, #5a3505 40%, #ffffff 40%, #ffffff 100%);
+  /* solid brown block across full width so text never overlaps white */
+  background: #714007;
   padding: 40px 20px 20px;
-  color: #fff;
+  color: #ffffff;
 }
+
 
 .hero-inner {
   max-width: 1100px;
@@ -659,23 +664,13 @@ footer {
     margin: 10px;
   }
 
-  .hero {
-  /* simpler solid brown so white text always readable */
-  background: #714007;
-  padding: 40px 20px 20px;
-  color: #ffffff;
-}
-
   .hero-inner {
     flex-direction: column;
   }
 
   .hero-text h1 {
-  font-size: 30px;
-  line-height: 1.3;
-  margin-bottom: 15px;
-  color: #ffffff;  /* force white */
-}
+    font-size: 24px;
+  }
 
   .hero-highlight {
     margin-top: 12px;
@@ -724,4 +719,5 @@ footer {
 .adsbygoogle {
   display: none !important;
 }
+
 
