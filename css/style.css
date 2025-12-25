@@ -360,3 +360,324 @@ footer {
 .adsbygoogle {
   display: none !important;
 }
+
+/* SIP Calculator Specific Styles - Add to your style.css */
+
+/* Calculator Tabs */
+.calculator-tabs {
+  display: flex;
+  background: #f8f9fa;
+  border-radius: 8px 8px 0 0;
+  margin: -20px 0 0 0;
+  overflow: hidden;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 16px 20px;
+  border: none;
+  background: #f8f9fa;
+  color: #666;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.tab-btn:hover {
+  background: #e9ecef;
+  color: #333;
+}
+
+.tab-btn.active {
+  background: white;
+  color: #007bff;
+  border-bottom-color: #007bff;
+  box-shadow: inset 0 -3px 0 #007bff;
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+  padding: 30px;
+  background: white;
+  border-radius: 0 0 12px 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Calculator Box Enhanced */
+.calculator-box {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 16px;
+  padding: 30px;
+  margin: 30px 0;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.5);
+  backdrop-filter: blur(10px);
+}
+
+.calculator-box label {
+  display: block;
+  margin: 20px 0 8px 0;
+  font-weight: 600;
+  color: #333;
+  font-size: 15px;
+}
+
+.calculator-box input,
+.calculator-box select {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e1e5e9;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.calculator-box input:focus,
+.calculator-box select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+  transform: translateY(-1px);
+}
+
+.calculator-box button {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0,123,255,0.3);
+}
+
+.calculator-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,123,255,0.4);
+}
+
+/* Results Box */
+.result-box {
+  margin: 30px 0;
+  padding: 0;
+}
+
+.result-highlight {
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  border: 2px solid #28a745;
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(40,167,69,0.2);
+}
+
+.result-highlight h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #155724;
+  margin: 0 0 15px 0;
+}
+
+.result-highlight p {
+  font-size: 16px;
+  margin: 10px 0;
+  color: #155724;
+}
+
+/* Growth Chart/Table */
+#growthChart {
+  margin: 30px 0;
+}
+
+.growth-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+  font-size: 14px;
+}
+
+.growth-table th {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  padding: 16px 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.growth-table td {
+  padding: 14px 12px;
+  border-bottom: 1px solid #f1f3f4;
+}
+
+.growth-table tr:hover {
+  background: #f8f9fa;
+}
+
+/* SEO Content Enhanced */
+.seo-content {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 16px;
+  margin: 30px 0;
+  border-left: 5px solid #007bff;
+}
+
+.seo-content h2 {
+  color: #333;
+  font-size: 22px;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+.seo-content code {
+  background: #e9ecef;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  color: #d63384;
+}
+
+/* FAQ Section Enhanced */
+.faq-section {
+  margin: 40px 0;
+}
+
+.faq-item {
+  margin-bottom: 16px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  background: white;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+  background: linear-gradient(135deg, #e9ecef, #dee2e6);
+}
+
+.faq-question .icon {
+  font-size: 20px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question .icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: white;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px;
+}
+
+.faq-answer p {
+  padding: 20px;
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Related Calculators */
+.related-calculators ul {
+  list-style: none;
+  padding: 0;
+}
+
+.related-calculators li {
+  margin: 12px 0;
+}
+
+.related-calculators a {
+  display: block;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.related-calculators a:hover {
+  transform: translateX(8px);
+  box-shadow: 0 6px 20px rgba(0,123,255,0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .calculator-tabs {
+    flex-direction: column;
+  }
+  
+  .tab-btn {
+    padding: 18px;
+    font-size: 15px;
+  }
+  
+  .calculator-box {
+    padding: 20px;
+  }
+  
+  .result-highlight h3 {
+    font-size: 24px;
+  }
+  
+  .growth-table {
+    font-size: 13px;
+  }
+  
+  .growth-table th,
+  .growth-table td {
+    padding: 10px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .calculator-box label {
+    font-size: 14px;
+  }
+  
+  .calculator-box input,
+  .calculator-box select {
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+
