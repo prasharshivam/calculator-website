@@ -607,3 +607,16 @@ footer {
   background: #5a3505;
   color: white;
 }
+
+/* generic calculators (ALL non‑SIP) */
+.calculator-box:not(.sip-enhanced) {
+  max-width: 500px;
+  background: #f9f9f9;
+  padding: 25px;
+  margin: 25px auto;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+
