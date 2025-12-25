@@ -1,60 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset 
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- Home Page -->
+  <!-- Core pages -->
   <url>
     <loc>https://www.yoursimplecalculator.com/</loc>
     <priority>1.0</priority>
   </url>
-
-  <!-- Core Calculators -->
   <url>
-    <loc>https://www.yoursimplecalculator.com/calculators/sip-calculator.html</loc>
+    <loc>https://www.yoursimplecalculator.com/financial.html</loc>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://www.yoursimplecalculator.com/calculators/mortgage-calculator.html</loc>
+    <loc>https://www.yoursimplecalculator.com/health.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.yoursimplecalculator.com/math.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.yoursimplecalculator.com/other.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Financial calculators -->
+  <url>
+    <loc>https://www.yoursimplecalculator.com/calculators/Financial/sip-calculator.html</loc>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://www.yoursimplecalculator.com/calculators/compound-interest-calculator.html</loc>
+    <loc>https://www.yoursimplecalculator.com/calculators/Financial/simple-interest-calculator.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.yoursimplecalculator.com/calculators/Financial/compound-interest-calculator.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.yoursimplecalculator.com/calculators/Financial/mortgage-calculator.html</loc>
     <priority>0.9</priority>
   </url>
-
   <url>
-    <loc>https://www.yoursimplecalculator.com/calculators/age-calculator.html</loc>
+    <loc>https://www.yoursimplecalculator.com/calculators/Financial/roi-calculator.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.yoursimplecalculator.com/calculators/Financial/salary-calculator.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.yoursimplecalculator.com/calculators/Financial/401k-calculator.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.yoursimplecalculator.com/calculators/Financial/loan-emi-calculator.html</loc>
     <priority>0.8</priority>
   </url>
 
+  <!-- Health calculators -->
   <url>
-    <loc>https://www.yoursimplecalculator.com/calculators/bmi-calculator.html</loc>
+    <loc>https://www.yoursimplecalculator.com/calculators/Health/bmi-calculator.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.yoursimplecalculator.com/calculators/Health/pregnancy-calculator.html</loc>
     <priority>0.8</priority>
   </url>
 
+  <!-- Math calculators -->
   <url>
-    <loc>https://www.yoursimplecalculator.com/calculators/loan-emi-calculator.html</loc>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.yoursimplecalculator.com/calculators/salary-calculator.html</loc>
+    <loc>https://www.yoursimplecalculator.com/calculators/Math/percentage-calculator.html</loc>
     <priority>0.8</priority>
   </url>
 
+  <!-- Other / utility calculators -->
   <url>
-    <loc>https://www.yoursimplecalculator.com/calculators/roi-calculator.html</loc>
+    <loc>https://www.yoursimplecalculator.com/calculators/Other/age-calculator.html</loc>
     <priority>0.8</priority>
   </url>
 
-  <url>
-    <loc>https://www.yoursimplecalculator.com/calculators/pregnancy-calculator.html</loc>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Informational Pages -->
+  <!-- Static info pages -->
   <url>
     <loc>https://www.yoursimplecalculator.com/about.html</loc>
     <priority>0.5</priority>
@@ -73,5 +98,3 @@
   </url>
 
 </urlset>
-
-
