@@ -331,35 +331,52 @@ body {
   text-decoration: underline;
 }
 
+/* Related Calculators - button style */
 .related-calculators {
   margin-top: 40px;
-  padding: 20px;
-  border-top: 1px solid #ddd;
-  background: #fafafa;
+  padding: 24px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  border-top: none;
 }
 
 .related-calculators h2 {
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
+  color: #333;
 }
 
 .related-calculators ul {
-  list-style: disc;
-  padding-left: 20px;
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .related-calculators li {
-  margin-bottom: 6px;
+  margin: 0;
 }
 
 .related-calculators a {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #714007, #5a3505);
+  color: #ffffff;
   text-decoration: none;
-  color: #0b3c6d;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .related-calculators a:hover {
-  text-decoration: underline;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.26);
 }
+
 
 /* =========================
    FAQ ACCORDION
@@ -719,5 +736,6 @@ footer {
 .adsbygoogle {
   display: none !important;
 }
+
 
 
