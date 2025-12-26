@@ -175,35 +175,43 @@ body {
 }
 
 /* SIP tabs */
+/* Calculator Tabs */
 .calculator-tabs {
   display: flex;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  border-radius: 20px 20px 0 0;
+  background: #f8f9fa;
+  border-radius: 8px 8px 0 0;
+  margin: 0 0 0 0;
   overflow: hidden;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
 }
 
 .tab-btn {
   flex: 1;
-  padding: 16px 18px;
+  padding: 14px 18px;
   border: none;
-  background: transparent;
-  color: #666;
+  background: #714007;            /* default brown */
+  color: #ffffff;
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.2s ease;
+  border-right: 1px solid #87521b;
+}
+
+.tab-btn:last-child {
+  border-right: none;
 }
 
 .tab-btn:hover {
-  background: rgba(113,64,7,0.06);
-  color: #714007;
+  background: #8a5510;
 }
 
 .tab-btn.active {
-  background: #ffffff;
-  color: #714007;
+  background: #ffffff;            /* active: white */
+  color: #714007;                 /* text brown */
   box-shadow: inset 0 -3px 0 #714007;
 }
+
 
 /* SIP tab content */
 .tab-content {
@@ -743,6 +751,7 @@ footer {
 .adsbygoogle {
   display: none !important;
 }
+
 
 
 
