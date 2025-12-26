@@ -757,7 +757,43 @@ footer {
   padding: 28px 28px 10px;
 }
 
+/* ==== Force light tabs + good mobile layout ==== */
+
+/* desktop / default */
+.calculator-box.sip-enhanced .tab-btn {
+  background: #f3e2cd !important;   /* light beige for inactive */
+  color: #714007 !important;        /* brown text */
+  border-right: 1px solid #e0c7a3;
+}
+
+.calculator-box.sip-enhanced .tab-btn.active {
+  background: #714007 !important;   /* solid brown when active */
+  color: #ffffff !important;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.18) inset;
+}
+
+/* mobile stacking */
+@media (max-width: 768px) {
+  .calculator-box.sip-enhanced .calculator-tabs {
+    flex-wrap: wrap;
+  }
+
+  .calculator-box.sip-enhanced .tab-btn {
+    flex: 1 1 50%;                  /* two tabs per row */
+    font-size: 13px;
+    padding: 10px 8px;
+    border-bottom: 1px solid #e0c7a3;
+    white-space: normal;
+  }
+
+  .calculator-box.sip-enhanced .tab-btn:nth-child(2n) {
+    border-right: none;
+  }
+}
+
+
 /* hide ads until live */
 .adsbygoogle {
   display: none !important;
 }
+
