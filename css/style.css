@@ -189,13 +189,13 @@ body {
   flex: 1;
   padding: 14px 18px;
   border: none;
-  background: #714007;            /* default brown */
-  color: #ffffff;
+  background: #f3e2cd;           /* light beige for inactive */
+  color: #714007;                /* brown text */
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  border-right: 1px solid #87521b;
+  border-right: 1px solid #e0c7a3;
 }
 
 .tab-btn:last-child {
@@ -203,14 +203,15 @@ body {
 }
 
 .tab-btn:hover {
-  background: #8a5510;
+  background: #e3c39c;           /* slightly darker on hover */
 }
 
 .tab-btn.active {
-  background: #ffffff;            /* active: white */
-  color: #714007;                 /* text brown */
-  box-shadow: inset 0 -3px 0 #714007;
+  background: #714007;           /* solid brown when active */
+  color: #ffffff;                /* white text */
+  box-shadow: 0 3px 10px rgba(0,0,0,0.18) inset;
 }
+
 
 
 /* SIP tab content */
@@ -751,6 +752,7 @@ footer {
 .adsbygoogle {
   display: none !important;
 }
+
 
 
 
