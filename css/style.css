@@ -705,6 +705,24 @@ footer {
   .calculator-box.sip-enhanced {
     margin: 20px 0;
   }
+
+     /* Percentage calculator tabs on mobile */
+  .calculator-tabs {
+    flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    flex: 1 1 50%;        /* two tabs per row */
+    font-size: 13px;
+    padding: 10px 8px;
+    border-right: 1px solid #e0c7a3;
+    border-bottom: 1px solid #e0c7a3;
+  }
+
+  .tab-btn:nth-child(2n) {
+    border-right: none;   /* no vertical line at row end */
+  }
+
 }
 
 @media (max-width: 480px) {
@@ -752,6 +770,7 @@ footer {
 .adsbygoogle {
   display: none !important;
 }
+
 
 
 
