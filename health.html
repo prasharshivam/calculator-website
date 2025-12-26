@@ -2,18 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Health Calculators – Your Simple Calculator</title>
+  <title>Health Calculators – BMI & Pregnancy Due Date | Your Simple Calculator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="css/style.css">
-  <!-- Favicon -->
-<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
-<link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512x512.png">
-<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-<link rel="shortcut icon" href="/images/favicon-32x32.png">
+  <meta name="description" content="Free health calculators including BMI calculator and pregnancy due date calculator. Check body mass index and estimate your baby’s due date in minutes.">
 
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What can I do with these health calculators?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can use the BMI calculator to estimate your body mass index based on height and weight, and the pregnancy calculator to get an estimated due date and current week of pregnancy based on key dates such as your last menstrual period."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are these health calculator results the same as a doctor’s diagnosis?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The calculators are educational tools and do not replace professional medical advice, diagnosis or treatment. Always consult a qualified healthcare professional before making health decisions based on these numbers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How accurate is the pregnancy due date calculator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The pregnancy calculator uses widely accepted formulas that estimate due date from your last menstrual period or conception date, assuming a typical cycle length. Actual delivery dates often vary, so your doctor or midwife is the best source for personalised information."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the BMI calculator suitable for everyone?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BMI is a general screening tool and does not account for factors such as muscle mass, age, pregnancy or certain medical conditions. Athletes, children, older adults and pregnant people may need more specialised assessments from healthcare professionals."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512x512.png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/images/favicon-32x32.png">
 </head>
 <body>
 
@@ -36,14 +80,101 @@
 
 <main class="container">
 
+  <nav class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>›</span>
+    <span>Fitness & Health Calculators</span>
+  </nav>
+
   <h1>Fitness & Health Calculators</h1>
 
-  <ul class="calculator-list">
-    <li><a href="calculators/Health/bmi-calculator.html">BMI Calculator</a></li>
-    <li><a href="calculators/Health/pregnancy-calculator.html">Pregnancy Calculator</a></li>
-  </ul>
+  <section class="seo-intro">
+    <p>
+      These <strong>health calculators</strong> give you quick estimates for body mass index and pregnancy due dates so you can better understand key health numbers before your next appointment.
+    </p>
+    <p>
+      Results are intended for general information only and should always be discussed with a doctor, midwife or other qualified healthcare professional before you make medical decisions.
+    </p>
+  </section>
+
+  <section class="seo-content">
+    <h2>Choose a Health Calculator</h2>
+    <ul class="calculator-list">
+      <li>
+        <a href="calculators/Health/bmi-calculator.html">BMI Calculator</a> – calculate your body mass index from height and weight and see which BMI range you fall into.
+      </li>
+      <li>
+        <a href="calculators/Health/pregnancy-calculator.html">Pregnancy Due Date Calculator</a> – estimate your baby’s due date and current week of pregnancy using your last menstrual period or conception date.
+      </li>
+    </ul>
+
+    <h2>How to Use Health Calculators Safely</h2>
+    <p>
+      Online health tools are most useful when they start a conversation rather than replace it. Use your BMI or pregnancy due date result as a starting point, then share it with your healthcare provider, who can interpret it in the context of your age, medical history and any existing conditions.[web:420][web:423]
+    </p>
+    <p>
+      Avoid making major changes to medication, diet or exercise based only on online calculators. When in doubt, schedule a professional check‑up instead of self‑diagnosing.[web:420][web:432]
+    </p>
+
+    <p style="font-size:13px; margin-top:18px; color:#666;">
+      Medical disclaimer: The information and tools on this page are for educational purposes only and are not a substitute for professional medical advice, diagnosis or treatment.[web:420][web:429]
+    </p>
+  </section>
+
+  <section class="faq-section">
+    <h2>Health Calculator FAQs</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Do these calculators replace visiting a doctor?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          No. They are educational tools that help you understand basic numbers before or after an appointment. Only a qualified healthcare professional can diagnose, treat or manage medical conditions.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Is my health data stored when I use these tools?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Inputs such as your height, weight or dates are processed in your browser only for calculation. The tools are not designed to collect or store personal health information.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Can I use the pregnancy calculator with irregular cycles?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          You can still get an estimate, but irregular cycles may make the due date less precise. In such cases, ultrasound measurements and guidance from your healthcare provider become even more important.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Who should be careful when interpreting BMI results?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Children, athletes, older adults, pregnant people and anyone with chronic health conditions should treat BMI as a rough guide only and rely on personalised assessments from their healthcare team.
+        </p>
+      </div>
+    </div>
+  </section>
 
 </main>
+
 <footer>
   <a href="about.html">about us</a> |
   <a href="sitemap.xml">sitemap</a> |
@@ -53,6 +184,13 @@
   © 2025 yoursimplecalculator.com
 </footer>
 
+<script>
+  document.querySelectorAll(".faq-question").forEach(function (button) {
+    button.addEventListener("click", function () {
+      button.parentElement.classList.toggle("active");
+    });
+  });
+</script>
+
 </body>
 </html>
-
