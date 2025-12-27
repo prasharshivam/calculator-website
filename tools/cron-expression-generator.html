@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cron Expression Generator – Build & Explain CRON Schedules | Your Simple Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Free cron expression generator for Unix-style CRON. Pick minutes, hours, days and months, see a human‑readable explanation and copy the final cron schedule string.">
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a cron expression?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A cron expression is a short string used to describe a repeating schedule for running background jobs on Unix-like systems and many cloud schedulers. It is usually written as five space-separated fields for minute, hour, day of month, month and day of week."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which cron format does this generator use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This tool uses the standard 5-field cron format commonly used by Linux crontab: minute, hour, day of month, month and day of week. It does not generate Quartz 6- or 7-field cron expressions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I use the cron expression generator?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Select a preset schedule such as every minute, hourly or daily, or manually choose values for minute, hour, day, month and day of week. The tool builds a cron expression, explains it in plain English and lets you copy it for use in your crontab or scheduler."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I paste an existing cron expression to see what it means?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can paste an existing cron expression into the input area and click the explain button. The tool validates the syntax and then shows a human-readable description of when the schedule will run."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Favicon (same as rest of site) -->
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512x512.png">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="/images/favicon-32x32.png">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="../index.html">
+        <img src="../images/logo.png" alt="Your Simple Calculator">
+      </a>
+    </div>
+
+    <nav class="main-nav">
+      <a href="../financial.html">Financial</a>
+      <a href="../health.html">Fitness & Health</a>
+      <a href="../math.html">Math</a>
+      <a href="../other.html">Other</a>
+      <a href="../tools/index.html">Tools</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <nav class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span>›</span>
+    <a href="../tools/index.html">Tools</a>
+    <span>›</span>
+    <span>Cron Expression Generator</span>
+  </nav>
+
+  <h1>Cron Expression Generator</h1>
+
+  <section class="seo-intro">
+    <p>
+      This <strong>cron expression generator</strong> helps you build and understand standard 5‑field cron schedules used in Linux crontab, many CI pipelines and cloud schedulers.
+    </p>
+    <p>
+      Choose a preset, adjust the minute, hour, day, month and weekday fields, and copy the final cron string along with a human‑readable explanation of when it will run.
+    </p>
+  </section>
+
+  <div class="calculator-box sip-enhanced">
+
+    <!-- Tabs: Generate vs Explain -->
+    <div class="calculator-tabs">
+      <button class="tab-btn active" data-tab="tab-generate">Generate cron</button>
+      <button class="tab-btn" data-tab="tab-explain">Explain existing cron</button>
+    </div>
+
+    <!-- Generate tab -->
+    <div id="tab-generate" class="tab-content active">
+
+      <label for="cronPreset">Quick presets</label>
+      <select id="cronPreset">
+        <option value="">Select a common schedule…</option>
+        <option value="* * * * *">Every minute</option>
+        <option value="0 * * * *">Every hour at minute 0</option>
+        <option value="0 0 * * *">Every day at midnight</option>
+        <option value="0 9 * * 1-5">Every weekday at 09:00</option>
+        <option value="0 6 * * 1">Every Monday at 06:00</option>
+        <option value="0 0 1 * *">First day of every month at midnight</option>
+        <option value="*/5 * * * *">Every 5 minutes</option>
+        <option value="0 */6 * * *">Every 6 hours</option>
+      </select>
+
+      <label>Cron fields (standard 5‑field)</label>
+      <div class="cron-fields-grid">
+        <div>
+          <span class="cron-label">Minute</span>
+          <input type="text" id="fieldMinute" placeholder="0–59 or *" value="0">
+        </div>
+        <div>
+          <span class="cron-label">Hour</span>
+          <input type="text" id="fieldHour" placeholder="0–23 or *" value="0">
+        </div>
+        <div>
+          <span class="cron-label">Day of month</span>
+          <input type="text" id="fieldDom" placeholder="1–31 or *" value="*">
+        </div>
+        <div>
+          <span class="cron-label">Month</span>
+          <input type="text" id="fieldMonth" placeholder="1–12 or *" value="*">
+        </div>
+        <div>
+          <span class="cron-label">Day of week</span>
+          <input type="text" id="fieldDow" placeholder="0–6 (Sun=0) or *" value="*">
+        </div>
+      </div>
+
+      <button id="btnGenerateCron">Generate cron expression</button>
+
+      <div class="result-box">
+        <p><strong>Cron expression:</strong></p>
+        <pre id="cronOutput" class="cron-output"></pre>
+        <p><strong>Plain‑English schedule:</strong></p>
+        <p id="cronDescription"></p>
+        <p id="cronError" class="cron-error"></p>
+      </div>
+    </div>
+
+    <!-- Explain tab -->
+    <div id="tab-explain" class="tab-content">
+      <label for="cronInput">Paste an existing cron expression</label>
+      <input type="text" id="cronInput" placeholder="Example: 0 9 * * 1-5">
+      <button id="btnExplainCron">Explain cron expression</button>
+
+      <div class="result-box">
+        <p><strong>Detected fields:</strong></p>
+        <pre id="cronFieldsBreakdown" class="cron-output"></pre>
+        <p><strong>Plain‑English schedule:</strong></p>
+        <p id="cronExplainDescription"></p>
+        <p id="cronExplainError" class="cron-error"></p>
+      </div>
+    </div>
+
+    <div id="growthChart"></div>
+  </div>
+
+  <section class="seo-content">
+    <h2>How Cron Expressions Are Structured</h2>
+    <p>
+      A standard Unix‑style cron expression uses five space‑separated fields in this order: minute, hour, day of month, month, and day of week. Each field can contain a single value, a list, a range or special characters such as * and / to express repeating patterns.[web:477][web:481]
+    </p>
+    <p>
+      For example, the expression <code>0 9 * * 1-5</code> means “run at 09:00 on every weekday from Monday to Friday”, while <code>*/5 * * * *</code> means “run every 5 minutes”.[web:474][web:484]
+    </p>
+
+    <h2>Using Cron Schedules Safely</h2>
+    <p>
+      Before adding a new cron expression to production servers or cloud jobs, always test it in a staging or development environment. A misplaced asterisk can trigger jobs far more frequently than intended, which can increase costs or overload your systems.[web:472][web:476][web:488]
+    </p>
+    <p>
+      This generator focuses on clarity and validation so that you have a readable explanation to review before copying the schedule into your crontab or infrastructure‑as‑code templates.
+    </p>
+  </section>
+
+  <section class="faq-section">
+    <h2>Cron Expression Generator FAQs</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Does this tool support Quartz cron expressions with seconds?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          No. This version targets the simpler 5‑field cron format used by most Linux systems. For schedulers that require seconds or year fields, you can still use the description as a guide and then manually adapt the expression in your platform.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        What do the * and */5 patterns mean in cron?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          An asterisk (*) means “every possible value” in that field, such as every minute or every day. A pattern like */5 means “every 5th value”, for example every 5 minutes or every 5 hours depending on which field it appears in.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Can I use names like MON or JAN instead of numbers?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Many cron implementations let you use three‑letter names such as JAN, FEB, MON or TUE in the month or day‑of‑week fields. This generator accepts both numeric and named values when explaining existing cron expressions.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Will this generator change anything on my server?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          No. The tool runs entirely in your browser and only helps you build or explain cron strings. You still need to copy the expression into your own crontab, CI pipeline or cloud scheduler configuration.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <a href="../about.html">about us</a> |
+  <a href="../sitemap.xml">sitemap</a> |
+  <a href="../terms.html">terms of use</a> |
+  <a href="../privacy.html">privacy policy</a>
+  <br><br>
+  © 2025 yoursimplecalculator.com
+</footer>
+
+<script src="../js/cron-generator.js"></script>
+<script>
+  // FAQ toggle (reuse pattern from other pages)
+  document.querySelectorAll(".faq-question").forEach(function (button) {
+    button.addEventListener("click", function () {
+      button.parentElement.classList.toggle("active");
+    });
+  });
+</script>
+
+</body>
+</html>
