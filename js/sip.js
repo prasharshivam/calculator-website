@@ -12,13 +12,13 @@ function getCurrencySymbol(code) {
 }
 
 // Convert annual return to monthly effective rate
-// r_monthly = (1 + r_annual)^(1/12) - 1  [web:228][web:233]
+// r_monthly = (1 + r_annual)^(1/12) - 1
 function annualToMonthlyRate(annualRatePercent) {
   const r = annualRatePercent / 100;
   return Math.pow(1 + r, 1 / 12) - 1;
 }
 
-// Standard SIP future value with monthly contributions [web:227][web:233]
+// Standard SIP future value with monthly contributions
 function calculateStandardSIP(monthly, annualReturn, inflation, years) {
   const monthlyRate = annualToMonthlyRate(annualReturn);
   const months = Math.round(years * 12);
@@ -35,7 +35,7 @@ function calculateStandardSIP(monthly, annualReturn, inflation, years) {
   return { futureValue: fv, realValue, totalInvested: invested, years };
 }
 
-// Step-up SIP: monthly SIP increases once per year by stepUp% [web:231][web:234]
+// Step-up SIP: monthly SIP increases once per year by stepUp%
 function calculateStepUpSIP(initialMonthly, stepUpPercent, annualReturn, inflation, years) {
   const monthlyRate = annualToMonthlyRate(annualReturn);
   let fv = 0;
@@ -56,7 +56,7 @@ function calculateStepUpSIP(initialMonthly, stepUpPercent, annualReturn, inflati
   return { futureValue: fv, realValue, totalInvested: invested, years: totalYears };
 }
 
-// Goal-based reverse SIP using binary search on monthly SIP amount [web:235][web:241]
+// Goal-based reverse SIP using binary search on monthly SIP amount
 function calculateGoalSIP(targetToday, years, annualReturn, inflation) {
   const targetNominal = targetToday * Math.pow(1 + inflation / 100, years);
   const monthlyRate = annualToMonthlyRate(annualReturn);
@@ -86,23 +86,101 @@ function calculateGoalSIP(targetToday, years, annualReturn, inflation) {
   };
 }
 
-// Simple yearly stub growth table (can be enhanced later)
-function renderGrowthStub(years, label) {
+// Yearly growth table for SIP (standard / step-up / goal)
+// mode: "standard" | "stepup" | "goal"
+function renderGrowthStub(years, label, options = {}) {
   const chart = document.getElementById("growthChart");
   if (!chart) return;
+
+  const totalYears = Math.round(years);
+  const {
+    monthly = 0,
+    annualReturn = 0,
+    stepUpPercent = 0,
+    mode = "standard"
+  } = options;
+
+  const r = annualToMonthlyRate(annualReturn);
+  let rowsHtml = "";
+
+  if (mode === "standard") {
+    // Fixed monthly SIP
+    let balance = 0;
+    for (let y = 1; y <= totalYears; y++) {
+      let contributionYear = 0;
+      let interestYear = 0;
+
+      for (let m = 1; m <= 12; m++) {
+        balance += monthly;
+        contributionYear += monthly;
+        const interest = balance * r;
+        interestYear += interest;
+        balance += interest;
+      }
+
+      rowsHtml += `
+        <tr>
+          <td>${y}</td>
+          <td>${contributionYear.toLocaleString()}</td>
+          <td>${interestYear.toLocaleString()}</td>
+          <td>${balance.toLocaleString()}</td>
+          <td>Year ${y} contribution and compounding included in final result.</td>
+        </tr>
+      `;
+    }
+  } else if (mode === "stepup") {
+    // Step-up SIP: monthly increases once per year
+    let balance = 0;
+    let currentMonthly = monthly;
+
+    for (let y = 1; y <= totalYears; y++) {
+      let contributionYear = 0;
+      let interestYear = 0;
+
+      for (let m = 1; m <= 12; m++) {
+        balance += currentMonthly;
+        contributionYear += currentMonthly;
+        const interest = balance * r;
+        interestYear += interest;
+        balance += interest;
+      }
+
+      rowsHtml += `
+        <tr>
+          <td>${y}</td>
+          <td>${contributionYear.toLocaleString()}</td>
+          <td>${interestYear.toLocaleString()}</td>
+          <td>${balance.toLocaleString()}</td>
+          <td>Year ${y} SIP with step-up and compounding included in final result.</td>
+        </tr>
+      `;
+
+      currentMonthly *= (1 + stepUpPercent / 100);
+    }
+  } else {
+    // Generic fallback
+    rowsHtml = Array.from({ length: totalYears }, (_, i) => `
+      <tr>
+        <td>${i + 1}</td>
+        <td>-</td>
+        <td>-</td>
+        <td>-</td>
+        <td>Year ${i + 1} contribution and compounding included in final result.</td>
+      </tr>
+    `).join("");
+  }
+
   chart.innerHTML = `
     <h3>${label} (Yearly View)</h3>
     <table class="growth-table">
       <tr>
         <th>Year</th>
+        <th>Total Contribution</th>
+        <th>Interest Earned</th>
+        <th>Year-end Value</th>
         <th>Notes</th>
       </tr>
-      ${Array.from({ length: Math.round(years) }, (_, i) => `
-        <tr>
-          <td>${i + 1}</td>
-          <td>Year ${i + 1} contribution and compounding included in final result.</td>
-        </tr>
-      `).join("")}
+      ${rowsHtml}
     </table>
   `;
 }
@@ -147,7 +225,11 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       `;
 
-      renderGrowthStub(res.years, "Standard SIP Growth");
+      renderGrowthStub(res.years, "Standard SIP Growth", {
+        monthly: monthly,
+        annualReturn: annualReturn,
+        mode: "standard"
+      });
     });
   }
 
@@ -177,7 +259,12 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       `;
 
-      renderGrowthStub(res.years, "Step-Up SIP Growth");
+      renderGrowthStub(res.years, "Step-Up SIP Growth", {
+        monthly: initial,
+        annualReturn: annualReturn,
+        stepUpPercent: stepUp,
+        mode: "stepup"
+      });
     });
   }
 
@@ -208,7 +295,11 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
       `;
 
-      renderGrowthStub(res.years, "Goal-Based SIP Timeline");
+      renderGrowthStub(res.years, "Goal-Based SIP Timeline", {
+        monthly: res.requiredMonthly,
+        annualReturn: annualReturn,
+        mode: "standard"
+      });
     });
   }
 });
