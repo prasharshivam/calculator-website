@@ -791,9 +791,72 @@ footer {
   }
 }
 
+/* =========================
+   CRON GENERATOR STYLES
+========================= */
+
+/* reuse .calculator-box.sip-enhanced shell */
+
+/* Layout for cron fields */
+.cron-fields-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin: 10px 0 5px;
+}
+
+.cron-fields-grid > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.cron-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+/* Cron output blocks */
+.cron-output {
+  background: #1e1e1e;
+  color: #f1f1f1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-family: "Courier New", monospace;
+  font-size: 13px;
+  overflow-x: auto;
+  margin: 6px 0 10px;
+}
+
+.cron-error {
+  margin-top: 4px;
+  color: #b00020;
+  font-size: 13px;
+}
+
+/* Make buttons in cron tool consistent */
+#btnGenerateCron,
+#btnExplainCron {
+  margin-top: 14px;
+}
+
+/* Tabs already styled globally; minor tweak for long labels */
+.calculator-tabs .tab-btn {
+  white-space: nowrap;
+}
+
+/* Responsive: stack cron fields nicely on small screens */
+@media (max-width: 480px) {
+  .cron-fields-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 
 /* hide ads until live */
 .adsbygoogle {
   display: none !important;
 }
+
 
