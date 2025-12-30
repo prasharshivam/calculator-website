@@ -853,10 +853,35 @@ footer {
   }
 }
 
+/* Fix for SEO anchor text links - High contrast colors */
+.hero-text a,
+.hero-highlight a {
+  color: #0066cc !important;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.hero-text a:hover,
+.hero-highlight a:hover {
+  color: #004499 !important;
+  text-decoration: none;
+}
+
+/* Ensure card links remain styled */
+.calc-card {
+  color: inherit;
+  text-decoration: none;
+}
+
+.calc-card:hover {
+  text-decoration: none;
+}
+
 
 /* hide ads until live */
 .adsbygoogle {
   display: none !important;
 }
+
 
 
