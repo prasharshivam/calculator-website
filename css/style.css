@@ -853,17 +853,17 @@ footer {
   }
 }
 
-/* Fix for SEO anchor text links - High contrast colors */
+/* SEO anchor text links - Light beige on brown background */
 .hero-text a,
 .hero-highlight a {
-  color: #0066cc !important;
+  color: #F5E8C7 !important;  /* Light beige */
   text-decoration: underline;
   font-weight: 500;
 }
 
 .hero-text a:hover,
 .hero-highlight a:hover {
-  color: #004499 !important;
+  color: #D4C4A3 !important;  /* Slightly darker beige */
   text-decoration: none;
 }
 
@@ -878,10 +878,12 @@ footer {
 }
 
 
+
 /* hide ads until live */
 .adsbygoogle {
   display: none !important;
 }
+
 
 
 
