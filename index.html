@@ -33,41 +33,44 @@
 
   <meta name="msvalidate.01" content="8A383FBA39080F3B5CC480E579AFA54A" />
   <style>
-/* NUKE BLUE LINKS - FORCE BEIGE COLORS */
-.hero .hero-text a,
-.hero .hero-inner a,
-.hero-text p a,
-.hero-highlight ul a {
+/* Hero text links (brown background) - Light beige */
+.hero-text p a {
   color: #F5E8C7 !important;
   text-decoration: underline !important;
   font-weight: 500 !important;
-  background: transparent !important;
 }
 
-.hero .hero-text a:hover,
-.hero .hero-inner a:hover,
-.hero-text p a:hover,
-.hero-highlight ul a:hover {
+.hero-text p a:hover {
   color: #D4C4A3 !important;
   text-decoration: none !important;
+}
+
+/* White box links (hero-highlight) - DARK BROWN */
+.hero-highlight a,
+.hero-highlight ul li a {
+  color: #5D4037 !important;  /* Dark brown - matches theme */
+  text-decoration: underline !important;
+  font-weight: 500 !important;
+}
+
+.hero-highlight a:hover,
+.hero-highlight ul li a:hover {
+  color: #3E2723 !important;  /* Darker brown on hover */
+  text-decoration: none !important;
+}
+
+/* Kill ALL inherited link styles */
+.hero * a {
   background: transparent !important;
 }
 
-/* Kill ALL inherited link styles in hero section */
-.hero * a {
-  color: #F5E8C7 !important;
-}
-
-.hero * a:hover {
-  color: #D4C4A3 !important;
-}
-
-/* Protect your calculator cards */
+/* Protect calculator cards */
 .calc-card,
 .calc-card * {
   color: inherit !important;
 }
 </style>
+
 
 </head>
 <body>
@@ -316,4 +319,5 @@
 
 </body>
 </html>
+
 
