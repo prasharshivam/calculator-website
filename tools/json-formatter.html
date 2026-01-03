@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JSON Formatter & Parser - Free Online Tool</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free JSON formatter, validator, parser, minifier and beautifier. Format JSON with syntax highlighting, validate JSON structure, parse JSON to table view, and convert JSON to CSV/XML instantly.">
+
+  <link rel="stylesheet" href="../../css/style.css">
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a JSON formatter?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A JSON formatter takes messy, unreadable JSON data and makes it human-readable by adding proper indentation, line breaks, and syntax highlighting. It also validates JSON structure to catch errors."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the JSON parser work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The JSON parser reads JSON strings and converts them into structured formats like interactive tables, CSV exports, or XML. It handles nested objects and arrays automatically."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I minify JSON to reduce file size?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, the JSON minifier removes all unnecessary whitespace, comments, and formatting to create the smallest possible JSON file while keeping it valid and functional."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my JSON data safe here?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, all JSON processing happens entirely in your browser. No data is sent to servers, stored, or shared. Everything stays private and secure."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is JSON table view?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "JSON table view converts complex JSON objects and arrays into an interactive, spreadsheet-like table where you can expand/collapse nested data and copy specific values easily."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I convert JSON to CSV?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, the tool automatically flattens JSON arrays into CSV format with proper headers. It handles nested objects by creating dot-notation column names."
+        }
+      }
+    ]
+  }
+  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "JSON Formatter & Parser",
+  "url": "https://www.yoursimplecalculator.com/tools/json-formatter.html",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Web",
+  "description": "Free JSON formatter, validator, parser, minifier with table view, CSV/XML export and syntax highlighting.",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Your Simple Calculator",
+    "url": "https://www.yoursimplecalculator.com/"
+  }
+}
+</script>
+
+  <!-- Favicon -->
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512x512.png">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="shortcut icon" href="/images/favicon-32x32.png">
+
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="/">
+        <img src="../../images/logo.png" alt="Your Simple Calculator">
+      </a>
+    </div>
+    <nav class="main-nav">
+      <a href="/financial.html">Financial</a>
+      <a href="/health.html">Fitness & Health</a>
+      <a href="/math.html">Math</a>
+      <a href="/other.html">Other</a>
+      <a href="/tools.html">Tools</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <nav class="breadcrumb">
+    <a href="/">Home</a>
+    <span>›</span>
+    <a href="/tools.html">Tools</a>
+    <span>›</span>
+    <span>JSON Formatter</span>
+  </nav>
+
+  <h1>JSON Formatter &amp; Parser</h1>
+
+  <section class="seo-intro">
+    <p>
+      Free online <strong>JSON formatter</strong>, <strong>validator</strong>, <strong>parser</strong>, and <strong>minifier</strong> with syntax highlighting, table view, and CSV/XML export.
+    </p>
+    <p>
+      Format messy JSON instantly, validate structure, view as interactive table, and copy clean results. Perfect for developers working with APIs, config files, or data processing.
+    </p>
+  </section>
+
+  <!-- JSON TOOL CARD -->
+  <div class="calculator-box json-tool">
+
+    <div class="tool-tabs">
+      <button class="tab-btn active" data-tab="format">Format & Validate</button>
+      <button class="tab-btn" data-tab="table">Table View</button>
+      <button class="tab-btn" data-tab="minify">Minify</button>
+    </div>
+
+    <!-- FORMAT & VALIDATE TAB -->
+    <div id="format" class="tab-content active">
+      <div class="json-input-section">
+        <label for="jsonInput">Paste your JSON here</label>
+        <textarea id="jsonInput" rows="12" placeholder='{"name": "John", "age": 30, "city": "New York"}'></textarea>
+        <div class="input-actions">
+          <button id="formatJson">Format JSON</button>
+          <button id="clearJson">Clear</button>
+          <button id="loadSample">Load Sample</button>
+        </div>
+      </div>
+
+      <div id="formatResult" class="json-output-section">
+        <div class="status-bar" id="formatStatus"></div>
+        <pre id="formattedJson" class="json-output"></pre>
+        <div class="output-actions">
+          <button id="copyFormatted">Copy Formatted</button>
+          <button id="downloadFormatted">Download JSON</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TABLE VIEW TAB -->
+    <div id="table" class="tab-content">
+      <div class="json-input-section">
+        <label for="tableJsonInput">JSON for Table View</label>
+        <textarea id="tableJsonInput" rows="8" placeholder='[{"id":1,"name":"John","email":"john@example.com"},{"id":2,"name":"Jane","email":"jane@example.com"}]'></textarea>
+        <div class="input-actions">
+          <button id="parseTable">Parse to Table</button>
+          <button id="clearTable">Clear</button>
+        </div>
+      </div>
+      
+      <div id="tableResult" class="table-output-section">
+        <div class="table-actions">
+          <button id="exportCsv">Export CSV</button>
+          <button id="exportJson">Export JSON</button>
+          <select id="tableDepth">
+            <option value="1">Depth 1</option>
+            <option value="2">Depth 2</option>
+            <option value="3">Depth 3</option>
+          </select>
+        </div>
+        <div id="jsonTableContainer" class="json-table-container"></div>
+      </div>
+    </div>
+
+    <!-- MINIFY TAB -->
+    <div id="minify" class="tab-content">
+      <div class="json-input-section">
+        <label for="minifyInput">JSON to Minify</label>
+        <textarea id="minifyInput" rows="12" placeholder='{"user": {"name": "John Doe", "age": 30}}'></textarea>
+        <div class="input-actions">
+          <button id="minifyJson">Minify JSON</button>
+          <button id="clearMinify">Clear</button>
+        </div>
+      </div>
+
+      <div id="minifyResult" class="json-output-section">
+        <div class="status-bar" id="minifyStatus"></div>
+        <pre id="minifiedJson" class="json-output minified"></pre>
+        <div class="output-actions">
+          <button id="copyMinified">Copy Minified</button>
+          <button id="downloadMinified">Download Minified</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <section class="seo-content">
+    <h2>Complete JSON Toolkit for Developers</h2>
+    <p>
+      This free JSON formatter handles formatting, validation, parsing, and minification in one place. Use syntax-highlighted formatting to read complex API responses, validate JSON structure before deployment, or minify for production.
+    </p>
+
+    <h2>Interactive JSON Table Parser</h2>
+    <p>
+      Convert JSON arrays into interactive tables with expandable nested objects. Perfect for exploring API data, debugging responses, or preparing data for spreadsheets. Export directly to CSV with flattened nested properties.
+    </p>
+
+    <h2>JSON Validator with Error Details</h2>
+    <p>
+      Real-time JSON validation catches syntax errors, missing commas, unmatched brackets, and invalid data types. Get exact line numbers and error descriptions to fix issues instantly without external tools.
+    </p>
+
+    <h2>JSON Minifier for Production</h2>
+    <p>
+      Reduce JSON file sizes by up to 90% by removing whitespace and formatting. Essential for APIs, config files, and embedded JSON in web pages. Maintains 100% functionality while minimizing bandwidth.
+    </p>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="faq-section">
+    <h2>JSON Formatter FAQs</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        What is a JSON formatter?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>A JSON formatter makes unreadable JSON data human-readable with proper indentation, spacing, and color-coded syntax highlighting. It also validates the JSON structure.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        How does the JSON parser work?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>The parser converts JSON strings into visual formats like tables or exports (CSV/XML). It handles nested objects/arrays and provides interactive exploration of complex data structures.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Can I minify JSON to reduce file size?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes, the minifier removes all whitespace, line breaks, and formatting to create compact JSON. Perfect for APIs and production environments where bandwidth matters.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Is my JSON data safe here?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Completely safe. All processing happens in your browser with no server communication. Your data never leaves your device or gets stored anywhere.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        What is JSON table view?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Table view converts JSON arrays into spreadsheet-like tables. Expand/collapse nested objects and copy specific values. Great for API debugging and data analysis.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Can I convert JSON to CSV?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>Yes, export any JSON array to CSV with automatic header generation. Nested objects become dot-notation columns (user.name, user.age) for easy Excel import.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<aside class="related-calculators">
+  <h2>Related Developer Tools</h2>
+  <ul>
+    <li><a href="/tools/base64.html">Base64 Encoder/Decoder</a></li>
+    <li><a href="/tools/qr-code.html">QR Code Generator</a></li>
+    <li><a href="/tools/uuid.html">UUID Generator</a></li>
+  </ul>
+</aside>
+
+<footer>
+  <a href="/about.html">about us</a> |
+  <a href="/sitemap.xml">sitemap</a> |
+  <a href="/terms-and-conditions.html">terms of use</a> |
+  <a href="/privacy-policy.html">privacy policy</a>
+  <br><br>
+  © 2025 yoursimplecalculator.com
+</footer>
+
+<script src="../../js/json-formatter.js"></script>
+<script>
+  document.querySelectorAll(".faq-question").forEach(function (button) {
+    button.addEventListener("click", function () {
+      button.parentElement.classList.toggle("active");
+    });
+  });
+</script>
+</body>
+</html>
