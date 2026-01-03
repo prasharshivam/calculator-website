@@ -878,248 +878,189 @@ footer {
 }
 
 /* ========================================
-   JSON FORMATTER - FIXED RESPONSIVE LAYOUT
-   Desktop 1200px+: SPLIT | Mobile: STACKED
-======================================== */
+   JSON TOOL - CLEAN RESPONSIVE LAYOUT
+   NO CONFLICT WITH OTHER CALCULATORS
+========================================= */
 
-/* BASE GRID - DESKTOP SPLIT */
-.json-tool {
+/* Container Override - ONLY for JSON Tool */
+.calculator-box.json-tool {
+  max-width: none !important;
   display: grid !important;
   grid-template-columns: 1fr 1fr !important;
-  gap: 35px !important;
-  align-items: start !important;
-  min-height: 700px;
+  gap: 40px !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 40px 0 !important;
 }
 
-.json-tool .tool-tabs {
+/* Tabs Header */
+.calculator-box.json-tool .tool-tabs {
   grid-column: 1 / -1 !important;
   display: flex !important;
-  border-bottom: 3px solid #dee2e6;
-  margin: 0 0 0 -35px;
-  padding: 20px 35px;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  border-radius: 20px 20px 0 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border-radius: 20px 20px 0 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  box-shadow: 0 8px 32px rgba(102,126,234,0.3) !important;
 }
 
 /* Tab Buttons */
-.json-tool .tab-btn {
-  flex: 1;
-  background: transparent;
-  border: none;
-  padding: 20px 30px;
-  margin: 0 5px;
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 16px;
-  color: #495057;
-  border-radius: 15px 15px 0 0;
-  border-bottom: 4px solid transparent;
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.json-tool .tab-btn:hover {
-  color: #007bff !important;
-  background: rgba(0,123,255,0.1);
-  transform: translateY(-2px);
-}
-
-.json-tool .tab-btn.active {
-  color: #007bff !important;
-  background: white !important;
-  border-bottom-color: #007bff !important;
-  box-shadow: 0 -4px 20px rgba(0,123,255,0.2);
-}
-
-/* Tab Content */
-.json-tool .tab-content {
-  display: none !important;
-  padding: 40px !important;
-  border: 3px solid #e1e5e9 !important;
-  border-top: none !important;
-  border-radius: 0 20px 20px 20px !important;
-  background: linear-gradient(145deg, #ffffff 0%, #f8faff 100%) !important;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.12) !important;
-  min-height: 750px !important;
-  position: relative;
-  overflow: hidden;
-}
-
-.json-tool .tab-content.active {
-  display: block !important;
-}
-
-/* LEFT SIDE - INPUT */
-.json-input-section {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.json-input-section label {
-  font-size: 18px;
-  font-weight: 800;
-  color: #1a202c;
-  margin: 0 0 15px 0;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
-}
-
-/* BIG TEXTAREA - DESKTOP */
-#jsonInput, #tableJsonInput, #minifyInput {
+.calculator-box.json-tool .tab-btn {
   flex: 1 !important;
-  height: 650px !important;
-  max-height: 700px !important;
-  padding: 30px !important;
-  border: 4px solid #e2e8f0 !important;
-  border-radius: 24px !important;
-  font-family: 'JetBrains Mono', 'Consolas', monospace !important;
-  font-size: 16px !important;
-  line-height: 1.65 !important;
-  resize: none !important;
-  background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%) !important;
-  box-shadow: 
-    inset 0 4px 20px rgba(0,0,0,0.06),
-    0 8px 30px rgba(0,0,0,0.1) !important;
-  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-}
-
-#jsonInput:focus, #tableJsonInput:focus, #minifyInput:focus {
-  border-color: #3b82f6 !important;
-  box-shadow: 
-    0 0 0 6px rgba(59,130,246,0.2),
-    inset 0 4px 20px rgba(0,0,0,0.06),
-    0 20px 50px rgba(59,130,246,0.25) !important;
-  transform: translateY(-4px) !important;
-}
-
-/* RIGHT SIDE - OUTPUT */
-.json-output {
-  height: 650px !important;
-  max-height: 700px !important;
-  padding: 35px !important;
-  border: 4px solid #e2e8f0 !important;
-  border-radius: 24px !important;
-  font-family: 'JetBrains Mono', 'Consolas', monospace !important;
-  font-size: 16px !important;
-  line-height: 1.65 !important;
-  overflow: auto !important;
-  white-space: pre-wrap !important;
-  background: #0f172a !important;
-  color: #f1f5f9 !important;
-  box-shadow: 
-    inset 0 4px 20px rgba(0,0,0,0.3),
-    0 8px 30px rgba(0,0,0,0.2) !important;
-}
-
-/* Buttons */
-.input-actions, .output-actions {
-  display: flex;
-  gap: 20px;
-  padding: 25px 0 0 0;
-  border-top: 2px solid #e2e8f0;
-}
-
-.input-actions button, .output-actions button {
-  flex: 1;
-  padding: 20px 35px !important;
+  padding: 22px 30px !important;
   border: none !important;
-  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+  background: rgba(255,255,255,0.2) !important;
   color: white !important;
-  border-radius: 16px !important;
   font-weight: 700 !important;
   font-size: 16px !important;
   cursor: pointer !important;
-  box-shadow: 0 8px 35px rgba(59,130,246,0.4) !important;
   transition: all 0.3s ease !important;
-  min-height: 65px !important;
+  backdrop-filter: blur(10px);
 }
 
-.input-actions button:hover, .output-actions button:hover {
-  transform: translateY(-5px) scale(1.02) !important;
-  box-shadow: 0 15px 45px rgba(59,130,246,0.5) !important;
+.calculator-box.json-tool .tab-btn:not(:last-child) {
+  border-right: 1px solid rgba(255,255,255,0.2) !important;
 }
 
-/* Status */
-.status-bar {
-  padding: 22px 30px !important;
-  border-radius: 16px !important;
-  margin-bottom: 30px !important;
-  font-weight: 700 !important;
+.calculator-box.json-tool .tab-btn:hover {
+  background: rgba(255,255,255,0.3) !important;
+  transform: translateY(-2px) !important;
+}
+
+.calculator-box.json-tool .tab-btn.active {
+  background: rgba(255,255,255,0.95) !important;
+  color: #4f46e5 !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2) !important;
+}
+
+/* Tab Content Panels */
+.calculator-box.json-tool .tab-content {
+  display: none !important;
+  padding: 45px !important;
+  background: #ffffff !important;
+  border: 3px solid #e5e7eb !important;
+  border-top: none !important;
+  border-radius: 0 24px 24px 24px !important;
+  box-shadow: 
+    0 20px 60px rgba(0,0,0,0.15),
+    inset 0 1px 0 rgba(255,255,255,0.9) !important;
+  min-height: 800px !important;
+}
+
+/* Active Tab */
+.calculator-box.json-tool .tab-content.active {
+  display: block !important;
+}
+
+/* Input Section */
+.calculator-box.json-tool .json-input-section {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  gap: 30px !important;
+}
+
+.calculator-box.json-tool .json-input-section label {
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  color: #111827 !important;
+  margin-bottom: 0 !important;
+}
+
+/* MASSIVE TEXTAREA */
+.calculator-box.json-tool #jsonInput,
+.calculator-box.json-tool #tableJsonInput,
+.calculator-box.json-tool #minifyInput {
+  flex: 1 !important;
+  height: 700px !important;
+  padding: 35px !important;
+  border: 4px solid #d1d5db !important;
+  border-radius: 24px !important;
+  font-family: 'SF Mono', Monaco, 'JetBrains Mono', monospace !important;
   font-size: 17px !important;
-  box-shadow: 0 6px 25px rgba(0,0,0,0.15) !important;
+  line-height: 1.7 !important;
+  resize: none !important;
+  background: #fefefe !important;
+  box-shadow: 
+    0 10px 40px rgba(0,0,0,0.12),
+    inset 0 2px 8px rgba(0,0,0,0.03) !important;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
 }
 
-/* ========================================
-   MOBILE - FULL WIDTH STACKED (UNDER 992px)
-======================================== */
-@media (max-width: 1199px) {
-  .json-tool {
-    grid-template-columns: 1fr !important;
-    gap: 30px !important;
-  }
+.calculator-box.json-tool #jsonInput:focus,
+.calculator-box.json-tool #tableJsonInput:focus,
+.calculator-box.json-tool #minifyInput:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 
+    0 0 0 8px rgba(59,130,246,0.15),
+    0 20px 60px rgba(59,130,246,0.25),
+    inset 0 2px 8px rgba(0,0,0,0.03) !important;
+  transform: translateY(-3px) scale(1.01) !important;
 }
 
-@media (max-width: 768px) {
-  .json-tool .tab-content {
-    padding: 25px 20px !important;
-    min-height: 550px !important;
-  }
-  
-  #jsonInput, #tableJsonInput, #minifyInput,
-  .json-output {
-    height: 450px !important;
-    font-size: 14px !important;
-    padding: 25px 20px !important;
-  }
-  
-  .json-tool .tab-btn {
-    padding: 16px 20px !important;
-    font-size: 15px !important;
-    margin: 0 2px !important;
-  }
-  
-  .input-actions, .output-actions {
-    flex-direction: column !important;
-  }
-  
-  .input-actions button, .output-actions button {
-    width: 100% !important;
-    padding: 18px 30px !important;
-  }
+/* Output Area */
+.calculator-box.json-tool .json-output {
+  height: 700px !important;
+  padding: 40px !important;
+  border: 4px solid #d1d5db !important;
+  border-radius: 24px !important;
+  font-family: 'SF Mono', Monaco, 'JetBrains Mono', monospace !important;
+  font-size: 17px !important;
+  line-height: 1.7 !important;
+  background: #111827 !important;
+  color: #f9fafb !important;
+  overflow: auto !important;
+  box-shadow: 
+    0 10px 40px rgba(0,0,0,0.2),
+    inset 0 2px 12px rgba(0,0,0,0.3) !important;
 }
 
-@media (max-width: 480px) {
-  #jsonInput, #tableJsonInput, #minifyInput,
-  .json-output {
-    height: 380px !important;
-    font-size: 13px !important;
-    padding: 20px 15px !important;
-  }
-  
-  .json-tool .tab-content {
-    padding: 20px 15px !important;
-  }
+/* Buttons */
+.calculator-box.json-tool .input-actions,
+.calculator-box.json-tool .output-actions {
+  display: flex !important;
+  gap: 20px !important;
+  padding-top: 30px !important;
+  border-top: 3px solid #e5e7eb !important;
 }
 
-/* Syntax Highlighting - Enhanced */
-.json-output .key { 
-  color: #f7768e !important; 
-  font-weight: 700 !important;
+.calculator-box.json-tool .input-actions button,
+.calculator-box.json-tool .output-actions button {
+  flex: 1 !important;
+  padding: 22px 40px !important;
+  border: none !important;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+  color: white !important;
+  border-radius: 20px !important;
+  font-weight: 800 !important;
+  font-size: 17px !important;
+  cursor: pointer !important;
+  box-shadow: 0 12px 45px rgba(59,130,246,0.4) !important;
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
-.json-output .string { 
-  color: #9ece6a !important; 
+
+.calculator-box.json-tool .input-actions button:hover,
+.calculator-box.json-tool .output-actions button:hover {
+  transform: translateY(-6px) scale(1.03) !important;
+  box-shadow: 0 20px 60px rgba(59,130,246,0.5) !important;
 }
-.json-output .number { 
-  color: #7aa2f7 !important; 
+
+/* Status Bar */
+.calculator-box.json-tool .status-bar {
+  padding: 25px 35px !important;
+  border-radius: 20px !important;
+  margin-bottom: 35px !important;
+  font-weight: 800 !important;
+  font-size: 18px !important;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.15) !important;
 }
-.json-output .boolean { 
-  color: #ff9e64 !important; 
-}
-.json-output .null { 
-  color: #7dcfff !important; 
-  font-style: italic !important;
-}
+
+/* MOBILE: Stack Vertically */
+@media screen and (max-width: 1100px) {
+  .calculator-box
 
 
 
@@ -1127,6 +1068,7 @@ footer {
 .adsbygoogle {
   display: none !important;
 }
+
 
 
 
