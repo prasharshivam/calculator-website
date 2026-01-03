@@ -1,9 +1,20 @@
+# robots.txt for Your Simple Calculator
 User-agent: *
+
+# Allow everything (SEO optimized)
 Allow: /
 
-Disallow: /css/
-Disallow: /js/
-Disallow: /assets/
-
+# Sitemap
 Sitemap: https://www.yoursimplecalculator.com/sitemap.xml
 
+# Google AdSense crawlers (Mediapartners-Google)
+User-agent: Mediapartners-Google
+Allow: /
+
+# Google AdSense bots
+User-agent: AdsBot-Google
+Allow: /
+
+# Bing Ads
+User-agent: Bingbot
+Allow: /
