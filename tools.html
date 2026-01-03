@@ -5,7 +5,7 @@
   <title>Developer & Automation Tools – Your Simple Calculator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Free developer tools including a cron expression generator for Linux crontab and schedulers. Build, validate and explain cron schedules in plain English.">
+  <meta name="description" content="Free developer tools: JSON formatter/parser, cron expression generator, and automation utilities. Format JSON, validate structure, parse to tables/CSV, and build cron schedules instantly.">
 
   <link rel="stylesheet" href="css/style.css">
 
@@ -20,31 +20,39 @@
         "name": "What kind of tools are available on this page?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "This page focuses on small developer and automation helpers. The first tool is a cron expression generator that helps you create and explain Linux-style cron schedules without memorising every field."
+          "text": "This page offers developer utilities including JSON formatter/parser with table view/CSV export, cron expression generator for Linux crontab, and future automation helpers."
         }
       },
       {
         "@type": "Question",
-        "name": "Which cron syntax does the cron expression generator use?",
+        "name": "What does the JSON formatter do?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The generator on Your Simple Calculator uses the common 5-field Unix-style cron format: minute, hour, day of month, month and day of week. It is suitable for Linux crontab and many cloud schedulers that follow the same syntax."
+          "text": "The JSON formatter validates, beautifies with syntax highlighting, parses to interactive tables, minifies for production, and exports to CSV/XML. Perfect for API debugging and data processing."
         }
       },
       {
         "@type": "Question",
-        "name": "Can I paste an existing cron job to see what it does?",
+        "name": "Which cron syntax does the generator use?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes. You can paste an existing cron expression into the tool, validate the syntax and get a plain‑English description of when the job will run, which is useful for audits and debugging."
+          "text": "Uses standard 5-field Unix cron format (minute, hour, day of month, month, day of week) compatible with Linux crontab, cloud schedulers, and most cron implementations."
         }
       },
       {
         "@type": "Question",
-        "name": "Will more developer tools be added here?",
+        "name": "Are these tools safe for production data?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Over time, this section is planned to include additional helpers such as URL encoders, timestamp converters and text utilities so that common developer tasks can be handled from one place."
+          "text": "Yes, all processing is client-side only. No data leaves your browser. Use for testing configs, API responses, and schedules safely without server communication."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Will more developer tools be added?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, planned additions include Base64 encoder, timestamp converter, regex tester, URL encoder/decoder, and YAML formatter to create a complete developer toolkit."
         }
       }
     ]
@@ -92,10 +100,10 @@
 
   <section class="seo-intro">
     <p>
-      The <strong>tools</strong> section collects small utilities for developers, SREs and power users. These helpers are designed to be fast, focused and free, so you can get answers without installing extra software.
+      Essential <strong>developer tools</strong> for JSON processing, cron scheduling, and automation. Format/validate JSON with table views, generate cron expressions, and handle common dev tasks instantly.
     </p>
     <p>
-      Start with the cron expression generator to build readable cron schedules for Linux servers, CI jobs and cloud workflows, then copy the validated string directly into your configuration.
+      All tools run <strong>100% client-side</strong> for privacy and speed. Perfect for API debugging, config validation, CI/CD pipelines, and serverless workflows.
     </p>
   </section>
 
@@ -103,55 +111,101 @@
     <h2>Available Tools</h2>
     <ul class="calculator-list">
       <li>
-        <a href="tools/cron-expression-generator.html">Cron Expression Generator</a> – generate and explain standard 5‑field cron expressions for Linux crontab and many scheduler platforms.
+        <a href="tools/json-formatter.html">JSON Formatter & Parser</a> – format, validate, parse to tables, minify, and export JSON to CSV/XML with syntax highlighting.
+      </li>
+      <li>
+        <a href="tools/cron-expression-generator.html">Cron Expression Generator</a> – build, validate and explain 5-field cron schedules for Linux crontab and cloud schedulers.
       </li>
       <!-- Future tools can be listed here -->
     </ul>
 
-    <h2>Why Use Online Developer Tools?</h2>
+    <h2>JSON Formatter Features</h2>
     <p>
-      Lightweight web tools reduce context switching when you are already inside a browser, helping you avoid mistakes in syntax-heavy tasks such as cron scheduling or URL encoding.
+      Debug API responses with <strong>syntax-highlighted formatting</strong>, explore nested data in <strong>interactive tables</strong>, validate structure before deployment, and <strong>minify for production</strong>.
     </p>
+
+    <h2>Cron Generator Features</h2>
     <p>
-      Because everything runs client-side, you can safely test different values and copy the final output into your scripts, CI pipelines or infrastructure‑as‑code templates.
+      Create complex schedules like "every weekday at 2:30 AM" and get the exact cron string plus plain-English explanation. Paste existing jobs to audit and debug.
+    </p>
+
+    <h2>Why Client-Side Developer Tools?</h2>
+    <p>
+      No accounts, no APIs, no data retention. Test configurations safely in your browser, copy validated results, and integrate directly into your scripts, Dockerfiles, or IaC templates.
     </p>
   </section>
 
   <section class="faq-section">
-    <h2>Tools Page FAQs</h2>
+    <h2>Developer Tools FAQs</h2>
 
     <div class="faq-item">
       <button class="faq-question">
-        Are these tools safe to use with production settings?
+        What JSON features are available?
         <span class="icon">+</span>
       </button>
       <div class="faq-answer">
         <p>
-          The tools focus on generating and explaining text values such as cron strings and do not connect to your servers. Always review results and test in a staging environment before applying changes to production systems.
+          Format with syntax highlighting, validate structure, parse arrays to interactive tables, minify for production, export to CSV/XML, and copy/download clean results. Handles nested objects automatically.
         </p>
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-question">
-        Do I need to create an account to use the tools?
+        Are these tools safe for production data?
         <span class="icon">+</span>
       </button>
       <div class="faq-answer">
         <p>
-          No sign‑up is required. All tools on Your Simple Calculator are free to use in the browser and do not store your configuration or code snippets on the server.
+          Yes – 100% client-side processing. JSON, cron strings, and configs never leave your browser. Perfect for testing sensitive API responses or production schedules safely.
         </p>
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-question">
-        Can I suggest a new tool for this section?
+        Can I export JSON table data to Excel?
         <span class="icon">+</span>
       </button>
       <div class="faq-answer">
         <p>
-          Yes. If you have an idea for a calculator or developer utility that would save time for others, you can reach out through the contact information on the about page and share your suggestion.
+          Yes, export any JSON array to CSV with automatic headers. Nested objects flatten to dot notation (user.name, user.email) for perfect Excel/Google Sheets import.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        What cron format does the generator use?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Standard 5-field Unix cron: minute(0-59), hour(0-23), day(1-31), month(1-12), weekday(0-7). Works with Linux crontab, GitHub Actions, AWS Lambda, and most schedulers.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        Do I need to create an account?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          No accounts needed. All tools work instantly in your browser with no sign-up, storage, or tracking. Just paste your data and copy the results.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        What new tools are planned?
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Base64 encoder/decoder, timestamp converter (Unix/ISO), regex tester, URL encoder, YAML formatter, JWT decoder, and environment variable expander coming soon.
         </p>
       </div>
     </div>
