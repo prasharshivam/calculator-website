@@ -1099,18 +1099,23 @@ footer {
 }
 
 /* Hero section */
+/* Hero section - FULL SCREEN FIXED */
 .pomodoro-hero {
-  position: relative;
-  flex: 1;
+  position: fixed;        /* FIXED instead of relative */
+  top: 0;
+  left: 0;
+  width: 100vw;           /* viewport width */
+  height: 100vh;          /* viewport height */
   display: flex;
   align-items: center;
   justify-content: center;
-  background-size: cover;
+  background-size: cover;  /* scale to cover */
   background-position: center;
   background-repeat: no-repeat;
+  z-index: 1;
 }
 
-/* default background (Bangalore placeholder) */
+/* Background images (your existing rules) */
 .pomodoro-hero[data-city="bangalore"],
 .pomodoro-hero {
   background-image: url("/images/bangalore.jpg");
@@ -1121,7 +1126,7 @@ footer {
 }
 
 .pomodoro-hero[data-city="sanfrancisco"] {
-  background-image: url("/images/pomodoro/sanfrancisco.jpg");
+  background-image: url("/images/sanfrancisco.jpg");
 }
 
 .pomodoro-hero[data-city="newyork"] {
@@ -1142,15 +1147,25 @@ footer {
   background: linear-gradient(to bottom, rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85));
 }
 
+/* Content stays centered over full bg */
 .pomodoro-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   width: 100%;
   max-width: 720px;
   padding: 96px 16px 32px;
   margin: 0 auto;
   text-align: center;
 }
+
+/* Header sits ABOVE the hero */
+.pomodoro-header {
+  position: relative;     /* relative instead of absolute */
+  z-index: 3;
+  background: rgba(15, 23, 42, 0.9);  /* slight bg for readability */
+  backdrop-filter: blur(10px);
+}
+
 
 /* Top bar */
 .pomodoro-top-bar {
@@ -1299,6 +1314,7 @@ footer {
 .adsbygoogle {
   display: none !important;
 }
+
 
 
 
