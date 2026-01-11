@@ -1113,27 +1113,27 @@ footer {
 /* default background (Bangalore placeholder) */
 .pomodoro-hero[data-city="bangalore"],
 .pomodoro-hero {
-  background-image: url("/images/pomodoro/bangalore.jpg");
+  background-image: url("/images/bangalore.jpg");
 }
 
 .pomodoro-hero[data-city="tokyo"] {
-  background-image: url("/images/pomodoro/tokyo.jpg");
+  background-image: url("/images/tokyo.jpg");
 }
 
 .pomodoro-hero[data-city="sanfrancisco"] {
-  background-image: url("/images/pomodoro/sanfrancisco.jpg");
+  background-image: url("/images/sanfrancisco.jpg");
 }
 
 .pomodoro-hero[data-city="newyork"] {
-  background-image: url("/images/pomodoro/newyork.jpg");
+  background-image: url("/images/newyork.jpg");
 }
 
 .pomodoro-hero[data-city="singapore"] {
-  background-image: url("/images/pomodoro/singapore.jpg");
+  background-image: url("/images/singapore.jpg");
 }
 
 .pomodoro-hero[data-city="europe"] {
-  background-image: url("/images/pomodoro/europe.jpg");
+  background-image: url("/images/europe.jpg");
 }
 
 .pomodoro-overlay {
@@ -1299,5 +1299,6 @@ footer {
 .adsbygoogle {
   display: none !important;
 }
+
 
 
