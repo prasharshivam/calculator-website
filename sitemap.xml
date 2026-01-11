@@ -119,6 +119,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.yoursimplecalculator.com/tools/pomodoro.html</loc>
+    <lastmod>2026-01-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 
   <!-- Other / utility calculators -->
   <url>
@@ -161,5 +167,6 @@
   </url>
 
 </urlset>
+
 
 
