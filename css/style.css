@@ -1053,267 +1053,285 @@ footer {
       }
     }
 
-/* Full-screen background */
+/* =========================
+   POMODORO TOOL - FULL SCREEN BULLETPROOF
+========================= */
+
+/* OVERRIDE GLOBAL STYLES */
 .pomodoro-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #ffffff;
-  background-color: #111827;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 100vh !important;
+  min-height: 100vh !important;
+  overflow: hidden !important;
+  background: #111827 !important;
 }
 
 .pomodoro-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  position: fixed !important;  /* FIXED to viewport */
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  z-index: 1 !important;
 }
 
-/* Header */
+/* HEADER - FIXED ON TOP */
 .pomodoro-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 32px;
-  color: #f9fafb;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 100 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 12px 32px !important;
+  background: rgba(15, 23, 42, 0.98) !important;
+  backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.12) !important;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3) !important;
 }
 
 .pomodoro-logo {
-  height: 40px;
+  height: 40px !important;
 }
 
 .pomodoro-nav a {
-  margin-left: 16px;
-  font-size: 14px;
-  text-decoration: none;
-  color: #e5e7eb;
+  margin-left: 16px !important;
+  font-size: 14px !important;
+  text-decoration: none !important;
+  color: #e5e7eb !important;
 }
 
 .pomodoro-nav a:hover,
 .pomodoro-nav a.active {
-  color: #ffffff;
-  font-weight: 600;
+  color: #ffffff !important;
+  font-weight: 600 !important;
 }
 
-/* Hero section */
-/* Hero section - FULL SCREEN FIXED */
+/* HERO IMAGE - FULL VIEWPORT */
 .pomodoro-hero {
-  position: fixed;        /* FIXED instead of relative */
-  top: 0;
-  left: 0;
-  width: 100vw;           /* viewport width */
-  height: 100vh;          /* viewport height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;  /* scale to cover */
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 1;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  z-index: 1 !important;
 }
 
-/* Background images (your existing rules) */
+/* CITY IMAGES */
 .pomodoro-hero[data-city="bangalore"],
 .pomodoro-hero {
-  background-image: url("/images/bangalore.jpg");
+  background-image: url("/images/bangalore.jpg") !important;
 }
 
 .pomodoro-hero[data-city="tokyo"] {
-  background-image: url("/images/tokyo.jpg");
+  background-image: url("/images/tokyo.jpg") !important;
 }
 
 .pomodoro-hero[data-city="sanfrancisco"] {
-  background-image: url("/images/sanfrancisco.jpg");
+  background-image: url("/images/sanfrancisco.jpg") !important;
 }
 
 .pomodoro-hero[data-city="newyork"] {
-  background-image: url("/images/newyork.jpg");
+  background-image: url("/images/newyork.jpg") !important;
 }
 
 .pomodoro-hero[data-city="singapore"] {
-  background-image: url("/images/singapore.jpg");
+  background-image: url("/images/singapore.jpg") !important;
 }
 
 .pomodoro-hero[data-city="europe"] {
-  background-image: url("/images/europe.jpg");
+  background-image: url("/images/europe.jpg") !important;
 }
 
+/* OVERLAY */
 .pomodoro-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.85));
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(to bottom, 
+    rgba(15, 23, 42, 0.75), 
+    rgba(15, 23, 42, 0.95)) !important;
+  z-index: 2 !important;
 }
 
-/* Content stays centered over full bg */
+/* CONTENT - CENTERED OVER IMAGE */
 .pomodoro-content {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 720px;
-  padding: 96px 16px 32px;
-  margin: 0 auto;
-  text-align: center;
+  position: relative !important;
+  z-index: 3 !important;
+  width: 100% !important;
+  max-width: 720px !important;
+  margin: 0 auto !important;
+  padding: 140px 16px 40px !important;  /* SPACE FOR HEADER */
+  text-align: center !important;
+  flex: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
-/* Header sits ABOVE the hero */
-.pomodoro-header {
-  position: relative;     /* relative instead of absolute */
-  z-index: 3;
-  background: rgba(15, 23, 42, 0.9);  /* slight bg for readability */
-  backdrop-filter: blur(10px);
-}
-
-
-/* Top bar */
+/* ALL YOUR EXISTING CONTENT STYLES */
 .pomodoro-top-bar {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 40px;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 16px !important;
+  margin-bottom: 40px !important;
 }
 
 .pomodoro-mode-toggle {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  justify-content: center !important;
 }
 
 .mode-btn {
-  border-radius: 999px;
-  border: 1px solid rgba(249, 250, 251, 0.7);
-  background: rgba(15, 23, 42, 0.5);
-  color: #f9fafb;
-  padding: 6px 14px;
-  font-size: 14px;
-  cursor: pointer;
+  border-radius: 999px !important;
+  border: 1px solid rgba(249, 250, 251, 0.7) !important;
+  background: rgba(15, 23, 42, 0.5) !important;
+  color: #f9fafb !important;
+  padding: 6px 14px !important;
+  font-size: 14px !important;
+  cursor: pointer !important;
 }
 
 .mode-btn.active {
-  background: #f9fafb;
-  color: #111827;
-  font-weight: 600;
+  background: #f9fafb !important;
+  color: #111827 !important;
+  font-weight: 600 !important;
 }
 
 .mode-btn:hover {
-  background: rgba(249, 250, 251, 0.9);
-  color: #111827;
+  background: rgba(249, 250, 251, 0.9) !important;
+  color: #111827 !important;
 }
 
-/* Wallpaper dropdown */
 .pomodoro-wallpaper-select {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  color: #e5e7eb;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-size: 14px !important;
+  color: #e5e7eb !important;
 }
 
 .pomodoro-wallpaper-select select {
-  border-radius: 999px;
-  border: none;
-  padding: 6px 12px;
-  font-size: 14px;
+  border-radius: 999px !important;
+  border: none !important;
+  padding: 6px 12px !important;
+  font-size: 14px !important;
+  background: rgba(15, 23, 42, 0.8) !important;
+  color: #f9fafb !important;
 }
 
-/* Timer display */
 .pomodoro-timer-block {
-  margin-top: 12px;
+  margin-top: 12px !important;
 }
 
 .pomodoro-display {
-  font-size: clamp(72px, 15vw, 140px);
-  font-weight: 700;
-  letter-spacing: 4px;
-  margin-bottom: 24px;
+  font-size: clamp(72px, 15vw, 140px) !important;
+  font-weight: 700 !important;
+  letter-spacing: 4px !important;
+  margin-bottom: 24px !important;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.5) !important;
 }
 
-/* Buttons */
 .pomodoro-controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin-bottom: 12px !important;
 }
 
 .pomodoro-btn {
-  border-radius: 999px;
-  border: none;
-  padding: 10px 24px;
-  font-size: 15px;
-  cursor: pointer;
+  border-radius: 999px !important;
+  border: none !important;
+  padding: 10px 24px !important;
+  font-size: 15px !important;
+  cursor: pointer !important;
+  backdrop-filter: blur(12px) !important;
 }
 
 .pomodoro-btn.primary {
-  background: #f9fafb;
-  color: #111827;
-  font-weight: 600;
+  background: rgba(249, 250, 251, 0.95) !important;
+  color: #111827 !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3) !important;
 }
 
 .pomodoro-btn.primary:hover {
-  background: #e5e7eb;
+  background: rgba(229, 231, 235, 0.95) !important;
+  transform: translateY(-2px) !important;
 }
 
 .pomodoro-btn.ghost {
-  background: transparent;
-  color: #f9fafb;
-  border: 1px solid rgba(249, 250, 251, 0.6);
+  background: rgba(15, 23, 42, 0.7) !important;
+  color: #f9fafb !important;
+  border: 1px solid rgba(249, 250, 251, 0.3) !important;
 }
 
 .pomodoro-btn.ghost:hover {
-  background: rgba(249, 250, 251, 0.12);
+  background: rgba(249, 250, 251, 0.15) !important;
 }
 
-/* Status text */
 .pomodoro-status {
-  font-size: 14px;
-  color: #e5e7eb;
+  font-size: 14px !important;
+  color: #e5e7eb !important;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5) !important;
 }
 
-/* Info section */
+/* Info section - BELOW timer but still over image */
 .pomodoro-info {
-  background: #0f172a;
-  color: #e5e7eb;
+  background: transparent !important;
+  color: #e5e7eb !important;
+  margin-top: 40px !important;
+  padding: 24px 16px !important;
 }
 
 .pomodoro-info-inner {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 24px 16px 40px;
+  max-width: 900px !important;
+  margin: 0 auto !important;
 }
 
 .pomodoro-info-inner h1 {
-  font-size: 22px;
-  margin-bottom: 8px;
+  font-size: 22px !important;
+  margin-bottom: 8px !important;
 }
 
 .pomodoro-info-inner p {
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
 }
 
 /* Responsive */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .pomodoro-header {
-    padding: 16px 64px;
+    padding: 12px 20px !important;
   }
-
   .pomodoro-content {
-    padding-top: 120px;
+    padding: 100px 16px 32px !important;
+  }
+  .pomodoro-info {
+    padding: 20px 12px !important;
   }
 }
+
 
 
 /* hide ads until live */
 .adsbygoogle {
   display: none !important;
 }
+
 
 
 
