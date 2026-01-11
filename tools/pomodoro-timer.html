@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pomodoro Timer – Focus with City Wallpapers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+        content="Free online Pomodoro timer with 25 and 30 minute sessions, short and long breaks, pause and reset options, plus soothing city wallpapers like Bangalore, Tokyo, San Francisco, New York and Singapore.">
+
+  <!-- Main site CSS -->
+  <link rel="stylesheet" href="/css/style.css" />
+  <!-- Pomodoro specific CSS -->
+  <link rel="stylesheet" href="/css/pomodoro.css" />
+
+  <!-- Schema: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Pomodoro Timer",
+    "url": "https://www.yoursimplecalculator.com/tools/pomodoro-timer.html",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "Web",
+    "description": "Online Pomodoro timer with 25 and 30 minute focus sessions, short and long breaks, pause and reset controls, plus soothing city wallpapers.",
+    "inLanguage": "en",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Your Simple Calculator",
+      "url": "https://www.yoursimplecalculator.com/"
+    }
+  }
+  </script>
+
+  <!-- Schema: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the Pomodoro technique?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Pomodoro technique is a time management method where you work in focused blocks, usually 25 minutes, followed by a short break. After several cycles you take a longer break."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I use this Pomodoro timer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Choose a session type such as 25 or 30 minute focus, short break or long break, then press Start. You can pause or reset at any time and switch wallpapers using the city dropdown."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I pause and resume the timer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Use the Pause button to temporarily stop the countdown and Resume to continue from where you left off."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What city wallpapers are available?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The timer includes soothing skyline wallpapers for Bangalore, Tokyo, San Francisco, New York, Singapore and a rotating set of European cities."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this Pomodoro timer store my data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The timer runs entirely in your browser. It does not require a login and does not store personal data on a server."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="pomodoro-body">
+
+  <main class="pomodoro-container">
+    <!-- Top navigation back to main site -->
+    <header class="pomodoro-header">
+      <a href="/" class="pomodoro-logo-link">
+        <img src="/images/logo.png" alt="Your Simple Calculator" class="pomodoro-logo">
+      </a>
+      <nav class="pomodoro-nav">
+        <a href="/#financial">Financial</a>
+        <a href="/#health">Health</a>
+        <a href="/#math">Math</a>
+        <a href="/#other">Other</a>
+        <a href="/#tools" class="active">Tools</a>
+      </nav>
+    </header>
+
+    <!-- Background overlay + main content -->
+    <section class="pomodoro-hero">
+      <div class="pomodoro-overlay"></div>
+
+      <div class="pomodoro-content">
+        <div class="pomodoro-top-bar">
+          <div class="pomodoro-mode-toggle" role="tablist" aria-label="Timer modes">
+            <button class="mode-btn active" data-mode="focus25">25 min focus</button>
+            <button class="mode-btn" data-mode="focus30">30 min focus</button>
+            <button class="mode-btn" data-mode="shortBreak">Short break</button>
+            <button class="mode-btn" data-mode="longBreak">Long break</button>
+          </div>
+
+          <div class="pomodoro-wallpaper-select">
+            <label for="citySelect">Wallpaper:</label>
+            <select id="citySelect">
+              <option value="bangalore">Bangalore</option>
+              <option value="tokyo">Tokyo</option>
+              <option value="sanfrancisco">San Francisco</option>
+              <option value="newyork">New York</option>
+              <option value="singapore">Singapore</option>
+              <option value="europe">European city mix</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="pomodoro-timer-block" aria-live="polite">
+          <div id="pomodoroDisplay" class="pomodoro-display">25:00</div>
+
+          <div class="pomodoro-controls">
+            <button id="startPauseBtn" class="pomodoro-btn primary">Start</button>
+            <button id="resetBtn" class="pomodoro-btn ghost" aria-label="Reset timer">↻</button>
+            <button id="soundToggleBtn" class="pomodoro-btn ghost" aria-label="Toggle sound">🔔 On</button>
+          </div>
+
+          <p class="pomodoro-status" id="pomodoroStatus">
+            Focus on one task until the timer ends, then take a short break.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Simple text section under hero for SEO / UX -->
+    <section class="pomodoro-info">
+      <div class="pomodoro-info-inner">
+        <h1>Pomodoro Timer with City Wallpapers</h1>
+        <p>
+          Use this free online Pomodoro timer to work in focused blocks of 25 or 30 minutes with short and long breaks built in. The background switches to calm city skylines such as Bangalore, Tokyo, San Francisco, New York, Singapore and European cities so that the screen stays visually soothing while you work.
+        </p>
+        <p>
+          The timer runs entirely in your browser. There are no ads, logins or pop‑ups, and you can pause, resume or reset the countdown without losing your current mode.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/pomodoro.js"></script>
+</body>
+</html>
