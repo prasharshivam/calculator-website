@@ -5,7 +5,7 @@
   <title>Developer & Automation Tools – Your Simple Calculator</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Free developer tools: JSON formatter/parser, cron expression generator, and automation utilities. Format JSON, validate structure, parse to tables/CSV, and build cron schedules instantly.">
+  <meta name="description" content="Free developer tools: JSON formatter/parser, cron expression generator, Pomodoro timer and automation utilities. Format JSON, validate structure, build cron schedules and stay focused with a customizable Pomodoro timer.">
 
   <link rel="stylesheet" href="css/style.css">
 
@@ -20,7 +20,7 @@
         "name": "What kind of tools are available on this page?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "This page offers developer utilities including JSON formatter/parser with table view/CSV export, cron expression generator for Linux crontab, and future automation helpers."
+          "text": "This page offers developer utilities including a JSON formatter/parser with table view and CSV export, a cron expression generator for Linux crontab, a Pomodoro timer with city wallpapers, and future automation helpers."
         }
       },
       {
@@ -28,7 +28,7 @@
         "name": "What does the JSON formatter do?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The JSON formatter validates, beautifies with syntax highlighting, parses to interactive tables, minifies for production, and exports to CSV/XML. Perfect for API debugging and data processing."
+          "text": "The JSON formatter validates JSON, beautifies it with indentation, parses arrays to tables, minifies for production, and exports to CSV. It is useful for API debugging and data processing."
         }
       },
       {
@@ -36,7 +36,15 @@
         "name": "Which cron syntax does the generator use?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Uses standard 5-field Unix cron format (minute, hour, day of month, month, day of week) compatible with Linux crontab, cloud schedulers, and most cron implementations."
+          "text": "The cron generator uses standard 5-field Unix cron format (minute, hour, day of month, month, day of week) compatible with Linux crontab, cloud schedulers, and most cron implementations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What features does the Pomodoro timer include?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Pomodoro timer supports 25 and 30 minute focus sessions, short and long breaks, pause and resume controls, and soothing city wallpapers such as Bangalore, Tokyo, San Francisco, New York, Singapore and European skylines."
         }
       },
       {
@@ -44,7 +52,7 @@
         "name": "Are these tools safe for production data?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, all processing is client-side only. No data leaves your browser. Use for testing configs, API responses, and schedules safely without server communication."
+          "text": "Yes, all tools run client-side only in your browser. JSON, cron strings and Pomodoro usage are not sent to a server, so you can safely test API responses and schedules."
         }
       },
       {
@@ -52,7 +60,7 @@
         "name": "Will more developer tools be added?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, planned additions include Base64 encoder, timestamp converter, regex tester, URL encoder/decoder, and YAML formatter to create a complete developer toolkit."
+          "text": "Planned additions include a Base64 encoder, timestamp converter, regex tester, URL encoder/decoder, YAML formatter and other utilities to build a complete developer toolkit."
         }
       }
     ]
@@ -100,10 +108,10 @@
 
   <section class="seo-intro">
     <p>
-      Essential <strong>developer tools</strong> for JSON processing, cron scheduling, and automation. Format/validate JSON with table views, generate cron expressions, and handle common dev tasks instantly.
+      Essential <strong>developer tools</strong> for JSON processing, cron scheduling, automation and focused work. Format and validate JSON, generate cron expressions, and stay in deep work mode with a Pomodoro timer and soothing city backgrounds.
     </p>
     <p>
-      All tools run <strong>100% client-side</strong> for privacy and speed. Perfect for API debugging, config validation, CI/CD pipelines, and serverless workflows.
+      All tools run <strong>100% client-side</strong> for privacy and speed. Ideal for API debugging, config validation, CI/CD pipelines, and distraction-free study or coding sessions.
     </p>
   </section>
 
@@ -111,27 +119,35 @@
     <h2>Available Tools</h2>
     <ul class="calculator-list">
       <li>
-        <a href="tools/json-formatter.html">JSON Formatter & Parser</a> – format, validate, parse to tables, minify, and export JSON to CSV/XML with syntax highlighting.
+        <a href="tools/json-formatter.html">JSON Formatter & Parser</a> – format, validate, parse to tables, minify, and export JSON to CSV with clean indentation.
       </li>
       <li>
         <a href="tools/cron-expression-generator.html">Cron Expression Generator</a> – build, validate and explain 5-field cron schedules for Linux crontab and cloud schedulers.
+      </li>
+      <li>
+        <a href="tools/pomodoro-timer.html">Pomodoro Timer with City Wallpapers</a> – 25 &amp; 30 minute focus sessions, short and long breaks, pause/resume controls and high-tech city skylines like Bangalore, Tokyo, San Francisco, New York, Singapore and European cities.
       </li>
       <!-- Future tools can be listed here -->
     </ul>
 
     <h2>JSON Formatter Features</h2>
     <p>
-      Debug API responses with <strong>syntax-highlighted formatting</strong>, explore nested data in <strong>interactive tables</strong>, validate structure before deployment, and <strong>minify for production</strong>.
+      Debug API responses with <strong>formatted JSON</strong>, explore nested arrays in <strong>simple tables</strong>, validate structure before deployment, and <strong>minify for production</strong> to reduce payload size.
     </p>
 
     <h2>Cron Generator Features</h2>
     <p>
-      Create complex schedules like "every weekday at 2:30 AM" and get the exact cron string plus plain-English explanation. Paste existing jobs to audit and debug.
+      Create complex schedules like "every weekday at 2:30 AM" and get the exact cron string plus a plain-English explanation. Paste existing jobs to audit, visualise and debug quickly.
+    </p>
+
+    <h2>Pomodoro Timer Features</h2>
+    <p>
+      Switch between 25 or 30 minute focus blocks, short and long breaks, and keep the screen visually calm with skyline backgrounds from Bangalore, Tokyo, San Francisco, New York, Singapore and soft European cityscapes. Pause and resume sessions without losing progress and enable a gentle sound when the timer completes.
     </p>
 
     <h2>Why Client-Side Developer Tools?</h2>
     <p>
-      No accounts, no APIs, no data retention. Test configurations safely in your browser, copy validated results, and integrate directly into your scripts, Dockerfiles, or IaC templates.
+      No accounts, APIs or data retention. Test configurations safely in your browser, copy validated results, and integrate directly into scripts, Dockerfiles or infrastructure-as-code templates while keeping sensitive data local.
     </p>
   </section>
 
@@ -145,7 +161,7 @@
       </button>
       <div class="faq-answer">
         <p>
-          Format with syntax highlighting, validate structure, parse arrays to interactive tables, minify for production, export to CSV/XML, and copy/download clean results. Handles nested objects automatically.
+          Format with indentation, validate structure, parse arrays to simple tables, minify for production, export to CSV, and copy or download clean results. Handles nested objects using dot notation keys.
         </p>
       </div>
     </div>
@@ -157,7 +173,7 @@
       </button>
       <div class="faq-answer">
         <p>
-          Yes – 100% client-side processing. JSON, cron strings, and configs never leave your browser. Perfect for testing sensitive API responses or production schedules safely.
+          Yes – all processing happens 100% in your browser. JSON, cron strings and Pomodoro usage are never sent to a server, so you can test sensitive data safely.
         </p>
       </div>
     </div>
@@ -169,7 +185,7 @@
       </button>
       <div class="faq-answer">
         <p>
-          Yes, export any JSON array to CSV with automatic headers. Nested objects flatten to dot notation (user.name, user.email) for perfect Excel/Google Sheets import.
+          Yes, export any JSON array to CSV with automatic headers. Nested objects flatten to dotted keys (user.name, user.email) so that Excel and Google Sheets can read them easily.
         </p>
       </div>
     </div>
@@ -181,31 +197,31 @@
       </button>
       <div class="faq-answer">
         <p>
-          Standard 5-field Unix cron: minute(0-59), hour(0-23), day(1-31), month(1-12), weekday(0-7). Works with Linux crontab, GitHub Actions, AWS Lambda, and most schedulers.
+          It uses the standard 5-field Unix cron format: minute (0–59), hour (0–23), day of month (1–31), month (1–12) and day of week (0–7). This works with Linux crontab, many CI tools and common cloud schedulers.
         </p>
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-question">
-        Do I need to create an account?
+        How should I use the Pomodoro timer?
         <span class="icon">+</span>
       </button>
       <div class="faq-answer">
         <p>
-          No accounts needed. All tools work instantly in your browser with no sign-up, storage, or tracking. Just paste your data and copy the results.
+          Choose 25 or 30 minute focus, click Start and work on a single task until the timer ends. Then take a short break and repeat. After a few cycles, use the long break option. You can change wallpapers to keep the background calm while you study or code.
         </p>
       </div>
     </div>
 
     <div class="faq-item">
       <button class="faq-question">
-        What new tools are planned?
+        Do I need to create an account for any of the tools?
         <span class="icon">+</span>
       </button>
       <div class="faq-answer">
         <p>
-          Base64 encoder/decoder, timestamp converter (Unix/ISO), regex tester, URL encoder, YAML formatter, JWT decoder, and environment variable expander coming soon.
+          No account is required. Every tool works instantly in the browser with no sign-up, login or tracking, so you can open the page, paste your data and start working.
         </p>
       </div>
     </div>
