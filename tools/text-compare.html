@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Text Compare Tool - Compare Two Texts Side by Side</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Free online text compare tool. Compare two texts side by side with highlighting. Perfect for code review, document comparison, plagiarism check, or diff checking. 100% client-side.">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="canonical" href="https://www.yoursimplecalculator.com/tools/text-compare.html">
+
+  <!-- Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Text Compare Tool",
+    "url": "https://www.yoursimplecalculator.com/tools/text-compare.html",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "Web",
+    "description": "Compare two texts side by side with highlighting. Perfect for code review, document comparison, or finding differences.",
+    "inLanguage": "en",
+    "publisher": {"@type": "Organization", "name": "Your Simple Calculator"}
+  }
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-container">
+    <div class="logo">
+      <a href="/"><img src="../../images/logo.png" alt="Your Simple Calculator"></a>
+    </div>
+    <nav class="main-nav">
+      <a href="/financial.html">Financial</a>
+      <a href="/health.html">Fitness & Health</a>
+      <a href="/math.html">Math</a>
+      <a href="/other.html">Other</a>
+      <a href="/tools.html">Tools</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <nav class="breadcrumb">
+    <a href="/">Home</a> › <a href="/tools.html">Tools</a> › <span>Text Compare</span>
+  </nav>
+
+  <h1>Text Compare Tool</h1>
+
+  <section class="seo-intro">
+    <p>Free online <strong>text compare tool</strong> to compare two pieces of text side by side. Highlights additions, deletions, and changes in real-time. Perfect for code review, document comparison, plagiarism detection, or checking contract revisions.</p>
+    <p>100% client-side processing – no data leaves your browser. Paste your texts below and click Compare.</p>
+  </section>
+
+  <div class="calculator-box text-compare-container">
+    <!-- Text Inputs -->
+    <div class="compare-inputs">
+      <div class="input-group">
+        <label for="text1">Text 1 (Original)</label>
+        <textarea id="text1" placeholder="Paste your first text here... (code, documents, notes, etc.)"></textarea>
+      </div>
+      <div class="input-group">
+        <label for="text2">Text 2 (Modified)</label>
+        <textarea id="text2" placeholder="Paste your second text here..."></textarea>
+      </div>
+    </div>
+
+    <button id="compareBtn" class="compare-button">Compare Texts</button>
+    <button id="clearBtn">Clear All</button>
+  </div>
+
+  <!-- Results -->
+  <div id="results" class="compare-results" style="display: none;">
+    <div class="results-header">
+      <span>Comparison Results</span>
+      <div class="stats">
+        <span id="addedCount">+0 added</span>
+        <span id="removedCount">-0 removed</span>
+        <span id="changedCount">0 changed</span>
+      </div>
+    </div>
+    
+    <div class="compare-output">
+      <div class="output-panel left">
+        <div class="panel-header">Original</div>
+        <div id="result1" class="result-text"></div>
+      </div>
+      <div class="output-panel right">
+        <div class="panel-header">Modified</div>
+        <div id="result2" class="result-text"></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="seo-content">
+    <h2>How to Use Text Compare Tool</h2>
+    <ol class="calculator-list">
+      <li>Paste your original text in the left box and modified text in the right box.</li>
+      <li>Click <strong>Compare Texts</strong> – differences highlight instantly.</li>
+      <li><span class="added">Green</span> = added text, <span class="removed">Red</span> = removed text, <span class="changed">Yellow</span> = modified text.</li>
+      <li>Click <strong>Clear All</strong> to reset and compare new texts.</li>
+    </ol>
+  </section>
+
+  <section class="related-calculators">
+    <h2>Related Tools</h2>
+    <ul>
+      <li><a href="cron-expression-generator.html">Cron Expression Generator</a></li>
+      <li><a href="pomodoro-timer.html">Pomodoro Timer</a></li>
+      <li><a href="../json-formatter.html">JSON Formatter</a></li>
+      <li><a href="/tools.html">More Tools →</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <a href="/about.html">about us</a> | <a href="/sitemap.xml">sitemap</a> | 
+  <a href="/terms-and-conditions.html">terms</a> | <a href="/privacy-policy.html">privacy</a>
+  <br><br>&copy; 2026 yoursimplecalculator.com
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const text1 = document.getElementById('text1');
+  const text2 = document.getElementById('text2');
+  const compareBtn = document.getElementById('compareBtn');
+  const clearBtn = document.getElementById('clearBtn');
+  const results = document.getElementById('results');
+  const result1 = document.getElementById('result1');
+  const result2 = document.getElementById('result2');
+  const addedCount = document.getElementById('addedCount');
+  const removedCount = document.getElementById('removedCount');
+  const changedCount = document.getElementById('changedCount');
+
+  // Simple diff algorithm
+  function diffTexts(textA, textB) {
+    const linesA = textA.split('\n');
+    const linesB = textB.split('\n');
+    const maxLen = Math.max(linesA.length, linesB.length);
+    
+    let added = 0, removed = 0, changed = 0;
+    let htmlA = '', htmlB = '';
+
+    for (let i = 0; i < maxLen; i++) {
+      const lineA = linesA[i] || '';
+      const lineB = linesB[i] || '';
+      
+      if (lineA === lineB) {
+        htmlA += `<div class="line unchanged">${escapeHtml(lineA)}</div>`;
+        htmlB += `<div class="line unchanged">${escapeHtml(lineB)}</div>`;
+      } else if (!lineA) {
+        htmlB += `<div class="line added">+ ${escapeHtml(lineB)}</div>`;
+        added++;
+      } else if (!lineB) {
+        htmlA += `<div class="line removed">- ${escapeHtml(lineA)}</div>`;
+        removed++;
+      } else {
+        htmlA += `<div class="line changed">- ${escapeHtml(lineA)}</div>`;
+        htmlB += `<div class="line changed">+ ${escapeHtml(lineB)}</div>`;
+        changed++;
+      }
+    }
+
+    return { htmlA, htmlB, added, removed, changed };
+  }
+
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  compareBtn.addEventListener('click', function() {
+    const content1 = text1.value;
+    const content2 = text2.value;
+    
+    if (!content1 && !content2) {
+      alert('Please enter text in both fields');
+      return;
+    }
+
+    const diff = diffTexts(content1, content2);
+    
+    result1.innerHTML = diff.htmlA;
+    result2.innerHTML = diff.htmlB;
+    
+    addedCount.textContent = `+${diff.added} added`;
+    removedCount.textContent = `-${diff.removed} removed`;
+    changedCount.textContent = `${diff.changed} changed`;
+    
+    results.style.display = 'block';
+    results.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  clearBtn.addEventListener('click', function() {
+    text1.value = '';
+    text2.value = '';
+    results.style.display = 'none';
+  });
+
+  // Keyboard shortcuts
+  document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey || e.metaKey) {
+      if (e.key === 'Enter') {
+        compareBtn.click();
+      }
+    }
+  });
+});
+</script>
+
+<style>
+/* Text Compare Specific Styles */
+.text-compare-container {
+  max-width: none !important;
+  background: #f8f9fa !important;
+  padding: 0 !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12) !important;
+}
+
+.compare-inputs {
+  display: flex;
+  gap: 0;
+  max-width: none;
+}
+
+.input-group {
+  flex: 1;
+  padding: 20px;
+  background: white;
+  border-right: 1px solid #e0e0e0;
+}
+
+.input-group:last-child {
+  border-right: none;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.input-group textarea {
+  width: 100%;
+  height: 300px;
+  padding: 12px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+
+.input-group textarea:focus {
+  outline: none;
+  border-color: #714007;
+  box-shadow: 0 0 0 3px rgba(113,64,7,0.1);
+}
+
+.compare-button, #clearBtn {
+  display: block;
+  width: 200px;
+  margin: 20px auto;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #714007, #5a3505);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#clearBtn {
+  background: #6c757d;
+  margin-left: 10px;
+}
+
+.compare-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(113,64,7,0.4);
+}
+
+#clearBtn:hover {
+  background: #5a6268;
+}
+
+/* Results */
+.compare-results {
+  margin-top: 30px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  overflow: hidden;
+}
+
+.results-header {
+  background: #f8f9fa;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.results-header span {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.stats span {
+  padding: 4px 12px;
+  border-radius: 20px;
+  background: #e9ecef;
+}
+
+.compare-output {
+  display: flex;
+  max-height: 600px;
+}
+
+.output-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-header {
+  background: #714007;
+  color: white;
+  padding: 12px 16px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.left .panel-header { border-right: 1px solid #ddd; }
+.right .panel-header { background: #495057; }
+
+.result-text {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  max-height: 500px;
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.line {
+  padding: 2px 0;
+  margin: 1px 0;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.added { background: #d4edda !important; color: #155724; }
+.removed { background: #f8d7da !important; color: #721c24; }
+.changed { background: #fff3cd !important; color: #856404; }
+.unchanged { color: #495057; }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .compare-inputs {
+    flex-direction: column;
+  }
+  
+  .input-group textarea {
+    height: 200px;
+  }
+  
+  .compare-output {
+    flex-direction: column;
+    max-height: none;
+  }
+  
+  .result-text {
+    max-height: 300px;
+  }
+  
+  .stats {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .compare-button, #clearBtn {
+    width: 100%;
+    margin: 10px 20px;
+  }
+  
+  #clearBtn {
+    margin-left: 20px;
+  }
+}
+</style>
+
+</body>
+</html>
