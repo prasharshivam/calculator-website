@@ -1294,11 +1294,56 @@ footer {
   }
 }
 
+<style>
+.ai-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.ai-card {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #222;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: 0.25s ease;
+  border: 1px solid #eee;
+}
+
+.ai-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.ai-card h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.ai-card p {
+  font-size: 13px;
+  color: #555;
+}
+
+.ai-tag {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 11px;
+  padding: 4px 8px;
+  background: #f2f2f2;
+  border-radius: 20px;
+}
+</style>
+
 
 /* hide ads until live */
 .adsbygoogle {
   display: none !important;
 }
+
 
 
 
